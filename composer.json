@@ -34,9 +34,12 @@
         "phpunit/phpunit": "9.*"
     },
     "autoload": {
-        "psr-4": {
-            "Flame\\": "src/"
-        }
+      "files": [
+        "src/Common.php"
+      ],
+      "psr-4": {
+          "Flame\\": "src/"
+      }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
