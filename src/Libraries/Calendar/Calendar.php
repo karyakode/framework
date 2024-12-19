@@ -93,7 +93,7 @@ class Calendar {
 	 */
 	public function __construct($config = array())
 	{
-		$this->CI = flame();
+		$this->CI = kodhe();
 		$this->CI->lang->load('calendar');
 
 		empty($config) OR $this->initialize($config);

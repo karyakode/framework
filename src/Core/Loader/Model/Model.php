@@ -8,7 +8,7 @@ use Kodhe\Core\Dependency\DependencyResolver;
 
 class Model
 {
-    private array $flameClasses = [];
+    private array $kodheClasses = [];
     private array $modelPaths;
     private array $varMap = [];
     protected $resolve;
@@ -35,7 +35,7 @@ class Model
         $class = strtolower(basename($model));
         $objectName = ($objectName ? $objectName : $class);
 
-        if (flame()->has($objectName)) {
+        if (kodhe()->has($objectName)) {
             return $this;
         }
 
@@ -55,12 +55,12 @@ class Model
     {
         $alias = $objectName ?? strtolower(basename(str_replace('\\', '/', $model)));
 
-        if (flame()->has($alias)) {
+        if (kodhe()->has($alias)) {
             return $this;
         }
 
         //$instance = $params ? new $model($params) : new $model;
-        //flame()->set($alias, $instance);
+        //kodhe()->set($alias, $instance);
 
         $this->initializeInstance($model, $params, $alias);
 
@@ -96,7 +96,7 @@ class Model
         Module::load_file($_model, $path);
 
         $className = $this->buildClassName($_model);
-        $namespace = flame('setup')->get('App:namespace') . '\\' . str_replace(
+        $namespace = kodhe('setup')->get('App:namespace') . '\\' . str_replace(
             ['.', '/'],
             ['', '\\'],
             str_replace(APPPATH, '', $path)
@@ -106,13 +106,13 @@ class Model
             $className = $namespace . $className;
         }
 
-        $this->flameClasses[$class] = $objectName;
+        $this->kodheClasses[$class] = $objectName;
 
         $this->initializeInstance($className, $params, $objectName);
 
         /*$instance = $params ? new $className($params) : new $className;
-        if (!flame()->has($objectName)) {
-            flame()->set($objectName, $instance);
+        if (!kodhe()->has($objectName)) {
+            kodhe()->set($objectName, $instance);
         }*/
     }
 
@@ -148,7 +148,7 @@ class Model
         ?array $params,
         ?string $objectName
     ): bool {
-        if (flame()->has($objectName)) {
+        if (kodhe()->has($objectName)) {
             return true;
         }
 
@@ -184,7 +184,7 @@ class Model
 
     private function initializeInstance(string $class, ?array $params, ?string $objectName): bool
     {
-        if (flame()->has($objectName)) {
+        if (kodhe()->has($objectName)) {
             return true;
         }
 
@@ -193,14 +193,14 @@ class Model
         } else {
           $instance = $this->resolve->resolve($class, [], false);
         }
-        flame()->set($objectName, $instance);
+        kodhe()->set($objectName, $instance);
 
         return true;
     }
 
     private function resolveClassName(string $subNamespace, string $class): string
     {
-        foreach (flame('App')->getNamespaces() as $namespace) {
+        foreach (kodhe('App')->getNamespaces() as $namespace) {
             $fullName = $namespace . '\\' . $subNamespace . '\\' . $class;
 
             if (class_exists($fullName)) {

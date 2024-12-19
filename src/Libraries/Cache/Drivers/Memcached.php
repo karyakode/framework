@@ -44,12 +44,12 @@ class Memcached extends Driver {
 	public function __construct()
 	{
 		// Try to load memcached server info from the config file.
-		$CI = flame();
+		$CI = kodhe();
 		$defaults = $this->_config['default'];
 
-		if (flame()->config->load('memcached', TRUE, TRUE))
+		if (kodhe()->config->load('memcached', TRUE, TRUE))
 		{
-			$this->_config = flame()->config->config['memcached'];
+			$this->_config = kodhe()->config->config['memcached'];
 		}
 
 		if (class_exists('Memcached', FALSE))

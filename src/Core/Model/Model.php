@@ -210,13 +210,13 @@ class Model extends Legacy implements \ArrayAccess
                     $this->_db = self::$_dbCaches[$this->database];
                 } else {
                     // CI Database Configuration
-                    $this->_db = flame()->load->database($this->database, true);
+                    $this->_db = kodhe()->load->database($this->database, true);
                     self::$_dbCaches[$this->database] = $this->_db;
                 }
             }
             else {
                 // Config array for each Model
-                $this->_db = flame()->load->database($this->database, true);
+                $this->_db = kodhe()->load->database($this->database, true);
             }
         } else {
             // CI Default DB Connection
@@ -234,13 +234,13 @@ class Model extends Legacy implements \ArrayAccess
                     $this->_dbr = self::$_dbrCaches[$this->databaseRead];
                 } else {
                     // CI Database Configuration
-                    $this->_dbr = flame()->load->database($this->databaseRead, true);
+                    $this->_dbr = kodhe()->load->database($this->databaseRead, true);
                     self::$_dbrCaches[$this->databaseRead] = $this->_dbr;
                 }
             }
             else {
                 // Config array for each Model
-                $this->_dbr = flame()->load->database($this->databaseRead, true);
+                $this->_dbr = kodhe()->load->database($this->databaseRead, true);
             }
         } else {
             // CI Default DB Connection
@@ -380,9 +380,9 @@ class Model extends Legacy implements \ArrayAccess
             return false;
 
         // Load CodeIgniter form_validation library for yidas/model namespace, which has no effect on common one
-        flame()->load->library('form_validation', null, 'model_form_validation');
+        kodhe()->load->library('form_validation', null, 'model_form_validation');
         // Get CodeIgniter validator
-        $validator = flame()->model_form_validation;
+        $validator = kodhe()->model_form_validation;
         $validator->reset_validation();
         $validator->set_data($data);
         $validator->set_rules($rules);
@@ -1205,11 +1205,11 @@ class Model extends Legacy implements \ArrayAccess
 
         } else {
             // Original CodeIgniter 3 model loader
-            flame()->load->model($modelName);
+            kodhe()->load->model($modelName);
             // Fix the modelName if it has path
             $path = explode('/', $modelName);
             $modelName = count($path) > 1 ? end($path) : $modelName;
-            $model = flame()->$modelName;
+            $model = kodhe()->$modelName;
         }
 
         $libClass = __CLASS__;
@@ -1268,8 +1268,8 @@ class Model extends Legacy implements \ArrayAccess
 
         } else {
             // Original CodeIgniter 3 model loader
-            flame()->load->model($modelName);
-            $model = flame()->$modelName;
+            kodhe()->load->model($modelName);
+            $model = kodhe()->$modelName;
         }
 
         // Check return type
@@ -1360,7 +1360,7 @@ class Model extends Legacy implements \ArrayAccess
      */
     public static function htmlEncode($content, $doubleEncode = true)
     {
-        $ci = & flame();
+        $ci = & kodhe();
 
         return htmlspecialchars($content, ENT_QUOTES | ENT_SUBSTITUTE, $ci->config->item('charset') ? $ci->config->item('charset') : 'UTF-8', $doubleEncode);
     }
@@ -1608,10 +1608,10 @@ class Model extends Legacy implements \ArrayAccess
         }
 
         if (!isset($this->db)) {
-            flame()->load->database();
+            kodhe()->load->database();
         }
         // No need to set as reference because $this->db is refered to &DB already.
-        return flame()->db;
+        return kodhe()->db;
     }
 
     /**
@@ -1682,7 +1682,7 @@ class Model extends Legacy implements \ArrayAccess
             }
 
             // CI parent::__get() check
-            if (property_exists(flame(), $name)) {
+            if (property_exists(kodhe(), $name)) {
 
                 return parent::__get($name);
             }

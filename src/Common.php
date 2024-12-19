@@ -677,7 +677,7 @@ if (!function_exists('resolve_namespace')) {
         }
 
         // Determine the root namespace based on the system flag.
-        $root_namespace = $system ? 'Flame' : $appSetup['namespace'];
+        $root_namespace = $system ? 'Kodhe' : $appSetup['namespace'];
 
         // Build the fully qualified namespace.
         return make_namespace($root_namespace, $sub_namespace, $class);

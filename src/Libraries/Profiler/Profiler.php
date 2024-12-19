@@ -61,7 +61,7 @@ class Profiler {
 	 */
 	public function __construct($config = array())
 	{
-		$this->CI = flame();
+		$this->CI = kodhe();
 		$this->CI->load->language('profiler');
 
 		// default all sections to display
@@ -163,16 +163,16 @@ class Profiler {
 		$dbs = array();
 
 		if (class_exists('CI_Model', FALSE)) {
-			//$flame = flame()->get('db');
-			//echo'<textarea>';print_r($flame);echo '</textarea>';
-			//print_r(flame()->db->name);
-			//if(is_object($flame)) {
-				//print_r($flame);
+			//$kodhe = kodhe()->get('db');
+			//echo'<textarea>';print_r($kodhe);echo '</textarea>';
+			//print_r(kodhe()->db->name);
+			//if(is_object($kodhe)) {
+				//print_r($kodhe);
 			//}
-			//echo'<textarea>';print_r(flame());echo '</textarea>'; exit;
+			//echo'<textarea>';print_r(kodhe());echo '</textarea>'; exit;
 		}
 
-		//print_r(flame()->db);
+		//print_r(kodhe()->db);
 		// Let's determine which databases are currently connected to
 		foreach (get_object_vars($this->CI) as $name => $cobject)
 		{

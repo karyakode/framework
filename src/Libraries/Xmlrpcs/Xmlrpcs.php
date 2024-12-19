@@ -184,10 +184,10 @@ class Xmlrpcs extends \Kodhe\Libraries\Xmlrpc\Xmlrpc {
 
 		if ($data === '')
 		{
-			// $CI = flame();
-			if (flame()->input->method() === 'post')
+			// $CI = kodhe();
+			if (kodhe()->input->method() === 'post')
 			{
-				$data = flame()->input->raw_input_stream;
+				$data = kodhe()->input->raw_input_stream;
 			}
 		}
 
@@ -364,7 +364,7 @@ class Xmlrpcs extends \Kodhe\Libraries\Xmlrpc\Xmlrpc {
 			}
 			elseif ($this->object === FALSE)
 			{
-				return flame()->{$method_parts[1]}($m);
+				return kodhe()->{$method_parts[1]}($m);
 			}
 
 			return $this->object->{$method_parts[1]}($m);

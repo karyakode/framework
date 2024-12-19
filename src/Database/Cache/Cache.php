@@ -8,7 +8,7 @@ class Cache {
 
 	public function __construct(&$db)
 	{
-		$this->CI =& flame();
+		$this->CI =& kodhe();
 		$this->db =& $db;
 		$this->CI->load->helper('file');
 

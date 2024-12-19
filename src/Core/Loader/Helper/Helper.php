@@ -4,12 +4,12 @@ use Kodhe\Core\Module\Module;
 
 class Helper {
 
-	public $_flame_helpers =	array();
-	protected $_flame_helper_paths;
+	public $_kodhe_helpers =	array();
+	protected $_kodhe_helper_paths;
 
   public function __construct(\Kodhe\Core\Path\Paths $Paths)
 	{
-		$this->_flame_helper_paths = $Paths::$helperPaths;
+		$this->_kodhe_helper_paths = $Paths::$helperPaths;
 	}
 
   public function make($helper = [])
@@ -18,7 +18,7 @@ class Helper {
           return $this->helper_legacy($helper);
       }
 
-      if (isset($this->_flame_helpers[$helper])) {
+      if (isset($this->_kodhe_helpers[$helper])) {
           return;
       }
 
@@ -29,7 +29,7 @@ class Helper {
       }
 
       Module::load_file($_helper, $path);
-      $this->_flame_helpers[$_helper] = true;
+      $this->_kodhe_helpers[$_helper] = true;
       return $this;
   }
 
@@ -40,12 +40,12 @@ class Helper {
       foreach ($helpers as $helper) {
           $helper = $this->normalize_helper_name($helper);
 
-          if (isset($this->_flame_helpers[$helper])) {
+          if (isset($this->_kodhe_helpers[$helper])) {
               continue;
           }
 
           if ($this->load_helper_extension($helper)) {
-              $this->_flame_helpers[$helper] = TRUE;
+              $this->_kodhe_helpers[$helper] = TRUE;
               continue;
           }
 
@@ -69,7 +69,7 @@ class Helper {
   {
       $ext_helper = config_item('subclass_prefix') . basename($helper);
 
-      foreach ($this->_flame_helper_paths as $path) {
+      foreach ($this->_kodhe_helper_paths as $path) {
           $helper_path = resolve_path($path, 'helpers');
 
           if (file_exists("{$helper_path}/{$ext_helper}.php")) {
@@ -97,12 +97,12 @@ class Helper {
 
   protected function load_helper($helper)
   {
-      foreach ($this->_flame_helper_paths as $path) {
+      foreach ($this->_kodhe_helper_paths as $path) {
           $helper_path = resolve_path($path, 'helpers');
 
           if (file_exists("{$helper_path}/{$helper}.php")) {
               include_once("{$helper_path}/{$helper}.php");
-              $this->_flame_helpers[$helper] = TRUE;
+              $this->_kodhe_helpers[$helper] = TRUE;
               log_message('info', "Helper loaded: {$helper}");
               return TRUE;
           }
@@ -117,9 +117,9 @@ class Helper {
  }
 
 
-  protected function &_flame_get_component($component)
+  protected function &_kodhe_get_component($component)
 	{
-		return flame()->$component;
+		return kodhe()->$component;
 	}
 
 

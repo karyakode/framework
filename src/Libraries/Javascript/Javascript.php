@@ -42,7 +42,7 @@ class Javascript {
 
 		extract($defaults);
 
-		$this->CI = flame();
+		$this->CI = kodhe();
 
 		// load the requested js library
 		$this->CI->load->library('Javascript/'.$js_library_driver, array('autoload' => $autoload));

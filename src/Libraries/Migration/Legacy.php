@@ -436,7 +436,7 @@ class Legacy {
 	 */
 	public function __get($var)
 	{
-		return flame()->$var;
+		return kodhe()->$var;
 	}
 
 }

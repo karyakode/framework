@@ -14,7 +14,7 @@ class InjectionContainer implements ServiceProvider {
 	/**
 	 * @var string Native prefix
 	 */
-	const NATIVE_PREFIX = 'flame:';
+	const NATIVE_PREFIX = 'kodhe:';
 
 	/**
 	 * @var array An associative array of registered dependencies

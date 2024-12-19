@@ -123,7 +123,7 @@ class Legacy {
 
 		$subclass_prefix = $GLOBALS['CFG']->item('subclass_prefix').'Controller';
 
-		if (file_exists(resolve_path(APPPATH,'core').'/'.$subclass_prefix.'.php') && class_exists(flame('setup')->get('App:namespace').'\Core\\'.$subclass_prefix, FALSE) === FALSE)
+		if (file_exists(resolve_path(APPPATH,'core').'/'.$subclass_prefix.'.php') && class_exists(kodhe('setup')->get('App:namespace').'\Core\\'.$subclass_prefix, FALSE) === FALSE)
 		{
 			require resolve_path(APPPATH,'core').'/'.$subclass_prefix.'.php';
 		}
@@ -272,7 +272,7 @@ class Legacy {
 			$GLOBALS[$key]   =& load_class($class, 'core');
 		}
 
-		$GLOBALS['flame'] = $this->getFacade();
+		$GLOBALS['kodhe'] = $this->getFacade();
 	}
 
 	public function overwriteCore()
@@ -306,7 +306,7 @@ class Legacy {
 			}
 
 			if(class_exists($name)) {
-				flame()->set(strtolower($objectname), new $name);
+				kodhe()->set(strtolower($objectname), new $name);
 			}
 		}
 

@@ -624,9 +624,9 @@ class Ftp {
 	 */
 	protected function _error($line)
 	{
-		// $CI = flame();
-		flame()->lang->load('ftp');
-		show_error(flame()->lang->line($line));
+		// $CI = kodhe();
+		kodhe()->lang->load('ftp');
+		show_error(kodhe()->lang->line($line));
 	}
 
 }

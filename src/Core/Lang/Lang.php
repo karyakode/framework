@@ -23,7 +23,7 @@ class Lang {
 					return $this->language;
 			}
 
-			$deft_lang = flame()->config->item('language');
+			$deft_lang = kodhe()->config->item('language');
 			$idiom = ($lang === '') ? $deft_lang : $lang;
 
 			if (in_array($langfile.'_lang'.'.php', $this->is_loaded, true)) {
@@ -108,7 +108,7 @@ class Lang {
 		}
 		else
 		{
-			foreach (flame()->load->get_package_paths(TRUE) as $package_path)
+			foreach (kodhe()->load->get_package_paths(TRUE) as $package_path)
 			{
 				$package_path = resolve_path($package_path,'language').'/'.$idiom.'/'.$langfile;
 				if ($basepath !== $package_path && file_exists($package_path))

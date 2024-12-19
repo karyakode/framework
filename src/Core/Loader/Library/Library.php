@@ -7,7 +7,7 @@ use Kodhe\Core\Path\Paths;
 use Kodhe\Core\Dependency\DependencyResolver;
 class Library
 {
-    private array $flameClasses = [];
+    private array $kodheClasses = [];
     private array $libraryPaths;
     private array $varMap = [
         'unit_test' => 'unit',
@@ -36,7 +36,7 @@ class Library
         $objectName = ($objectName ?? $class);
 
 
-        if (flame()->has($objectName)) {
+        if (kodhe()->has($objectName)) {
             return $this;
         }
 
@@ -56,12 +56,12 @@ class Library
     private function makeByNamespace(string $library, ?array $params = null, ?string $objectName = null): self
     {
         $alias = $objectName ?? strtolower(basename(str_replace('\\', '/', $library)));
-        if (flame()->has($alias)) {
+        if (kodhe()->has($alias)) {
             return $this;
         }
 
         //$instance = $params ? new $library($params) : new $library;
-        //flame()->set($alias, $instance);
+        //kodhe()->set($alias, $instance);
         $this->initializeInstance($library, $params, $alias);
 
         return $this;
@@ -96,7 +96,7 @@ class Library
         Module::load_file($_library, $path);
 
         $className = $this->buildClassName($_library);
-        $namespace = flame('setup')->get('App:namespace') . '\\' . str_replace(
+        $namespace = kodhe('setup')->get('App:namespace') . '\\' . str_replace(
             ['.', '/'],
             ['', '\\'],
             str_replace(APPPATH, '', $path)
@@ -106,13 +106,13 @@ class Library
             $className = $namespace . $className;
         }
 
-        $this->flameClasses[$class] = $objectName;
+        $this->kodheClasses[$class] = $objectName;
 
         $this->initializeInstance($className, $params, $objectName);
 
         /*$instance = $params ? new $className($params) : new $className;
-        if (!flame()->has($objectName)) {
-            flame()->set($objectName, $instance);
+        if (!kodhe()->has($objectName)) {
+            kodhe()->set($objectName, $instance);
         }*/
     }
 
@@ -147,7 +147,7 @@ class Library
         ?array $params,
         ?string $objectName
     ): bool {
-        if (flame()->has($objectName)) {
+        if (kodhe()->has($objectName)) {
             return true;
         }
 
@@ -184,7 +184,7 @@ class Library
 
     private function initializeInstance(string $class, ?array $params, ?string $objectName): bool
     {
-        if (flame()->has($objectName)) {
+        if (kodhe()->has($objectName)) {
             return true;
         }
 
@@ -196,13 +196,13 @@ class Library
           $instance = $this->resolve->resolve($class, [], false);
         }
 
-        flame()->set($objectName, $instance);
+        kodhe()->set($objectName, $instance);
         return true;
     }
 
     private function resolveClassName(string $subNamespace, string $class): string
     {
-        foreach (flame('App')->getNamespaces() as $namespace) {
+        foreach (kodhe('App')->getNamespaces() as $namespace) {
             $fullName = $namespace . '\\' . $subNamespace . '\\' . $class;
 
             if (class_exists($fullName)) {

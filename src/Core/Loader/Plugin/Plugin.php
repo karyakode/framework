@@ -5,7 +5,7 @@ use Kodhe\Core\Module\Module;
 class Plugin
 {
 
-  protected $_flame_plugins = [];
+  protected $_kodhe_plugins = [];
 
   function __construct()
   {
@@ -18,7 +18,7 @@ class Plugin
 					return $this->plugins($plugin);
 			}
 
-			if (isset($this->_flame_plugins[$plugin])) {
+			if (isset($this->_kodhe_plugins[$plugin])) {
 					return $this;
 			}
 
@@ -36,7 +36,7 @@ class Plugin
 			}
 
 			Module::load_file($_plugin, $path);
-			$this->_flame_plugins[$plugin] = true;
+			$this->_kodhe_plugins[$plugin] = true;
 			return $this;
 	}
 

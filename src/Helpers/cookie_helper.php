@@ -70,7 +70,7 @@ if ( ! function_exists('set_cookie'))
 	function set_cookie($name, $value = '', $expire = '', $domain = '', $path = '/', $prefix = '', $secure = NULL, $httponly = NULL)
 	{
 		// Set the config file options
-		flame()->input->set_cookie($name, $value, $expire, $domain, $path, $prefix, $secure, $httponly);
+		kodhe()->input->set_cookie($name, $value, $expire, $domain, $path, $prefix, $secure, $httponly);
 	}
 }
 
@@ -89,7 +89,7 @@ if ( ! function_exists('get_cookie'))
 	{
 		is_bool($xss_clean) OR $xss_clean = (config_item('global_xss_filtering') === TRUE);
 		$prefix = isset($_COOKIE[$index]) ? '' : config_item('cookie_prefix');
-		return flame()->input->cookie($prefix.$index, $xss_clean);
+		return kodhe()->input->cookie($prefix.$index, $xss_clean);
 	}
 }
 

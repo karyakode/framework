@@ -42,7 +42,7 @@ class Database
   		// given that the controller instance already exists
   		if (class_exists('CI_Controller', FALSE))
   		{
-  			foreach (flame()->load->get_package_paths() as $path)
+  			foreach (kodhe()->load->get_package_paths() as $path)
   			{
   				if ($path !== APPPATH)
   				{

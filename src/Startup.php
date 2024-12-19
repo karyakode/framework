@@ -180,14 +180,19 @@ if (file_exists(resolve_path(APPPATH,'config').'/constants.php'))
  * ------------------------------------------------------
  */
 
-	function &flame($dep = NULL)
+	function &kodhe($dep = NULL)
 	{
 		return Kodhe\Controller::get_instance($dep);
 	}
 
+	function &flame($dep = NULL) {
+
+    return kodhe($dep);
+  }
+
   function &get_instance() {
 
-    return flame();
+    return kodhe();
   }
 
 /*

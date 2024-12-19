@@ -79,7 +79,7 @@ class Autoloader
 
 			// autoload database & libraries
 			if (isset($autoload['libraries'])) {
-					if (!$db = flame()->config->item('database') && in_array('database', $autoload['libraries'])) {
+					if (!$db = kodhe()->config->item('database') && in_array('database', $autoload['libraries'])) {
 							Database::database();
 
 							$autoload['libraries'] = array_diff($autoload['libraries'], ['database']);
@@ -107,7 +107,7 @@ class Autoloader
 	}
 
 
-  public function _flame_autoloader()
+  public function _kodhe_autoloader()
 	{
 		$path_config = resolve_path(APPPATH,'config');
 
@@ -131,7 +131,7 @@ class Autoloader
 		{
 			foreach ($autoload['packages'] as $package_path)
 			{
-				flame()->load->add_package_path($package_path);
+				kodhe()->load->add_package_path($package_path);
 			}
 		}
 
@@ -140,7 +140,7 @@ class Autoloader
 		{
 			foreach ($autoload['config'] as $val)
 			{
-				flame()->load->config($val);
+				kodhe()->load->config($val);
 			}
 		}
 
@@ -149,14 +149,14 @@ class Autoloader
 		{
 			if (isset($autoload[$type]) && count($autoload[$type]) > 0)
 			{
-				flame()->load->$type($autoload[$type]);
+				kodhe()->load->$type($autoload[$type]);
 			}
 		}
 
 		// Autoload drivers
 		if (isset($autoload['drivers']))
 		{
-			flame()->load->driver($autoload['drivers']);
+			kodhe()->load->driver($autoload['drivers']);
 		}
 
 		// Load libraries
@@ -166,18 +166,18 @@ class Autoloader
 			if (in_array('database', $autoload['libraries']))
 			{
 
-				isset(flame()->db) OR Database::database();
+				isset(kodhe()->db) OR Database::database();
 				$autoload['libraries'] = array_diff($autoload['libraries'], array('database'));
 			}
 
 			// Load all other libraries
-			flame()->load->library($autoload['libraries']);
+			kodhe()->load->library($autoload['libraries']);
 		}
 
 		// Autoload models
 		if (isset($autoload['model']))
 		{
-			flame()->load->model($autoload['model']);
+			kodhe()->load->model($autoload['model']);
 		}
 	}
 

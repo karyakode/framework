@@ -47,9 +47,9 @@ class Database extends Driver implements HandlerInterface {
 	{
 		parent::__construct($params);
 
-		// $CI = flame();
-		isset(flame()->db) OR flame()->load->database();
-		$this->_db = flame()->db;
+		// $CI = kodhe();
+		isset(kodhe()->db) OR kodhe()->load->database();
+		$this->_db = kodhe()->db;
 
 		if ( ! $this->_db instanceof \Kodhe\Database\Builder\Builder)
 		{

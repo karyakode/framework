@@ -60,7 +60,7 @@ if ( ! function_exists('byte_format'))
 	 */
 	function byte_format($num, $precision = 1)
 	{
-		$CI = flame();
+		$CI = kodhe();
 		$CI->lang->load('number');
 
 		if ($num >= 1000000000000)

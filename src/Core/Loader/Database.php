@@ -7,7 +7,7 @@ class Database
   	public static function database($params = '', $return = FALSE, $query_builder = NULL)
   	{
   		// Do we even need to load the database class?
-  		if ($return === FALSE && isset(flame()->db) && is_object(flame()->db) && ! empty(flame()->db->conn_id))
+  		if ($return === FALSE && isset(kodhe()->db) && is_object(kodhe()->db) && ! empty(kodhe()->db->conn_id))
   		{
   			return FALSE;
   		}
@@ -17,9 +17,9 @@ class Database
   			return \Kodhe\Database\Database::DB($params, $query_builder);
   		}
 
-      if(flame()->has('db')) return;
+      if(kodhe()->has('db')) return;
   		// Load the DB class
-  		flame()->set('db', \Kodhe\Database\Database::DB($params, $query_builder));
+  		kodhe()->set('db', \Kodhe\Database\Database::DB($params, $query_builder));
 
   	}
 
@@ -29,7 +29,7 @@ class Database
   		if ( ! is_object($db) OR ! ($db instanceof \Kodhe\Database\DB))
   		{
   			class_exists('Kodhe\Database\DB', FALSE) OR self::database();
-  			$db =& flame()->db;
+  			$db =& kodhe()->db;
   		}
 
       $class = 'Kodhe\Database\Driver\Drivers\\'.ucwords($this->dbdriver).'\Utility';
@@ -39,8 +39,8 @@ class Database
   			return new $class($db);
   		}
 
-      if(flame()->has('dbutil')) return;
-  		flame()->set('dbutil', new $class($db));
+      if(kodhe()->has('dbutil')) return;
+  		kodhe()->set('dbutil', new $class($db));
 
   	}
 
@@ -49,7 +49,7 @@ class Database
   		if ( ! is_object($db) OR ! ($db instanceof \Kodhe\Database\DB))
   		{
   			class_exists('Kodhe\Database\DB', FALSE) OR self::database();
-  			$db =& flame()->db;
+  			$db =& kodhe()->db;
   		}
 
   		if ( ! empty($db->subdriver))
@@ -66,7 +66,7 @@ class Database
   			return new $class($db);
   		}
 
-      if(flame()->has('dbforge')) return;
-  		flame()->set('dbforge', new $class($db));
+      if(kodhe()->has('dbforge')) return;
+  		kodhe()->set('dbforge', new $class($db));
   	}
 }

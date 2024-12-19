@@ -43,7 +43,7 @@ class Parser {
 	public function __construct()
 	{
 
-		$this->CI = flame();
+		$this->CI = kodhe();
 		log_message('info', 'Parser Class Initialized');
 	}
 

@@ -4,7 +4,7 @@ namespace Kodhe\Core\Engine;
 
 class Autoloader {
 
-	protected $prefixes = array('Flame'=> BASEPATH);
+	protected $prefixes = array('Kodhe'=> BASEPATH);
 
 	protected static $instance;
 

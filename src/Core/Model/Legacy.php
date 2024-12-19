@@ -7,7 +7,7 @@ class Legacy {
 
 	public function __get($key)
 	{
-		return flame()->get($key);
+		return kodhe()->get($key);
 	}
 
 }

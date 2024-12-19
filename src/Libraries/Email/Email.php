@@ -2363,10 +2363,10 @@ class Email {
 	 */
 	protected function _set_error_message($msg, $val = '')
 	{
-		// $CI = flame();
-		flame()->lang->load('email');
+		// $CI = kodhe();
+		kodhe()->lang->load('email');
 
-		if (sscanf($msg, 'lang:%s', $line) !== 1 OR FALSE === ($line = flame()->lang->line($line)))
+		if (sscanf($msg, 'lang:%s', $line) !== 1 OR FALSE === ($line = kodhe()->lang->line($line)))
 		{
 			$this->_debug_msg[] = str_replace('%s', $val, $msg).'<br />';
 		}

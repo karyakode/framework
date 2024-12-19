@@ -161,8 +161,8 @@ class UnitTest {
 			$result = $this->result();
 		}
 
-		// $CI = flame();
-		flame()->load->language('unit_test');
+		// $CI = kodhe();
+		kodhe()->load->language('unit_test');
 
 		$this->_parse_template();
 
@@ -173,13 +173,13 @@ class UnitTest {
 
 			foreach ($res as $key => $val)
 			{
-				if ($key === flame()->lang->line('ut_result'))
+				if ($key === kodhe()->lang->line('ut_result'))
 				{
-					if ($val === flame()->lang->line('ut_passed'))
+					if ($val === kodhe()->lang->line('ut_passed'))
 					{
 						$val = '<span style="color: #0C0;">'.$val.'</span>';
 					}
-					elseif ($val === flame()->lang->line('ut_failed'))
+					elseif ($val === kodhe()->lang->line('ut_failed'))
 					{
 						$val = '<span style="color: #C00;">'.$val.'</span>';
 					}
@@ -236,8 +236,8 @@ class UnitTest {
 	 */
 	public function result($results = array())
 	{
-		// $CI = flame();
-		flame()->load->language('unit_test');
+		// $CI = kodhe();
+		kodhe()->load->language('unit_test');
 
 		if (count($results) === 0)
 		{
@@ -256,13 +256,13 @@ class UnitTest {
 				}
 				elseif (in_array($key, array('test_name', 'test_datatype', 'res_datatype', 'result'), TRUE))
 				{
-					if (FALSE !== ($line = flame()->lang->line(strtolower('ut_'.$val), FALSE)))
+					if (FALSE !== ($line = kodhe()->lang->line(strtolower('ut_'.$val), FALSE)))
 					{
 						$val = $line;
 					}
 				}
 
-				$temp[flame()->lang->line('ut_'.$key, FALSE)] = $val;
+				$temp[kodhe()->lang->line('ut_'.$key, FALSE)] = $val;
 			}
 
 			$retval[] = $temp;

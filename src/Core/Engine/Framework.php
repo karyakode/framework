@@ -267,7 +267,7 @@ class Framework {
 			{
 				if(strpos(strtolower($class), $var) === false) {
 					$var = ($var == 'loader') ? 'load' : $var;
-					flame()->set($var, $object);
+					kodhe()->set($var, $object);
 				}
 			}
 
@@ -317,7 +317,7 @@ class Framework {
 
 		if (isset($result))
 		{
-			flame('Response')->setBody($result);
+			kodhe('Response')->setBody($result);
 		}
 	}
 
@@ -354,7 +354,7 @@ class Framework {
 		return array(
 			'class' => $class,
 			'method' => $method,
-			'segments' => array(flame()->uri->uri_string().$qs)
+			'segments' => array(kodhe()->uri->uri_string().$qs)
 		);
 	}
 
@@ -383,7 +383,7 @@ class Framework {
 		$baseProvider = $application->addProvider(
 			VENDORPATH,
 			'Setup.php',
-			'flame'
+			'kodhe'
 		);
 
 		$baseProvider->setConfigPath(VENDORPATH.'Config');

@@ -211,7 +211,7 @@ class Provider extends InjectionBindingDecorator {
 	/**
 	 * Get the 'models.dependencies' key
 	 *
-	 * @return array [model => [flame:foo, flame:bar]]
+	 * @return array [model => [kodhe:foo, kodhe:bar]]
 	 */
 	public function getModelDependencies()
 	{
@@ -295,7 +295,7 @@ class Provider extends InjectionBindingDecorator {
 
 	protected function registerCookies()
 	{
-		$cookie_reg = $this->make('flame:CookieRegistry');
+		$cookie_reg = $this->make('kodhe:CookieRegistry');
 		foreach (['Necessary', 'Functionality', 'Performance', 'Targeting'] as $type)
 		{
 			foreach ($this->get('cookies.'.strtolower($type), []) as $cookie_name)
@@ -383,7 +383,7 @@ class Provider extends InjectionBindingDecorator {
 	{
 		if ($name == 'App')
 		{
-			return 'flame:'.$name;
+			return 'kodhe:'.$name;
 		}
 
 		if ( ! strpos($name, ':'))

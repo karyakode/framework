@@ -10,40 +10,40 @@ use \Kodhe\Core\Path\Paths;
 return [
 	'namespace' => 'Kodhe',
 	'author' => 'Karya Kode',
-	'name' => 'Flame Framework',
+	'name' => 'Kodhe Framework',
 	'version' => '0.3.2.2.0',
 	'link' => 'https://karyakode.id',
 	'date' => date('Y-m-d'),
 	'description' => "The page you are looking at is being generated dynamically by Karya Kode.",
 	'services'=> [
-		'load' => function($flame)
+		'load' => function($kodhe)
 		{
-			return new Loader($flame);
+			return new Loader($kodhe);
 		},
 	],
 	'services.singletons' => [
-		'Cookie' => function($flame)
+		'Cookie' => function($kodhe)
 		{
 
 		},
 
-		'CookieRegistry' => function($flame)
+		'CookieRegistry' => function($kodhe)
 		{
 
 		},
-		'Library' => function($flame)
+		'Library' => function($kodhe)
 		{
 			return new Library(new Paths);
 		},
-		'Helper' => function($flame)
+		'Helper' => function($kodhe)
 		{
 			return new Helpers(new Paths);
 		},
-		'Model' => function($flame)
+		'Model' => function($kodhe)
 		{
 			return new Models(new Paths);
 		},
-		'View' => function($flame)
+		'View' => function($kodhe)
 		{
 			class ServiceView
 			{
@@ -58,13 +58,13 @@ return [
 				}
 			}
 
-			return new ServiceView($flame);
+			return new ServiceView($kodhe);
 		},
-		'Config' => function($flame)
+		'Config' => function($kodhe)
 		{
-			return new Config($flame);
+			return new Config($kodhe);
 		},
-		'Lang' => function($flame)
+		'Lang' => function($kodhe)
 		{
 			class ServiceLanguage
 			{
@@ -75,13 +75,13 @@ return [
 				}
 				public function make($langfile, $idiom = '', $return = false, $add_suffix = true, $alt_path = ''){
 
-					return flame()->load->language($langfile, $idiom, $return, $add_suffix, $alt_path);
+					return kodhe()->load->language($langfile, $idiom, $return, $add_suffix, $alt_path);
 				}
 			}
 
-			return new ServiceLanguage($flame);
+			return new ServiceLanguage($kodhe);
 		},
-		'Driver' => function($flame)
+		'Driver' => function($kodhe)
 		{
 			class ServiceDriver
 			{
@@ -92,14 +92,14 @@ return [
 				}
 				public function make($library, $params = NULL, $object_name = NULL){
 
-					return flame()->load->driver($library, $params, $object_name);
+					return kodhe()->load->driver($library, $params, $object_name);
 				}
 			}
 
-			return new ServiceDriver($flame);
+			return new ServiceDriver($kodhe);
 		},
 
-		'setup' => function($flame)
+		'setup' => function($kodhe)
 		{
 			class ServiceSetup
 			{
@@ -118,23 +118,23 @@ return [
 						list($prefix, $name) = explode(':', $name, 2);
 						$provider = $provider->make('App')->get($prefix)->get($name);
 					} else {
-						$provider = $provider->make('App')->get('flame')->get($name);
+						$provider = $provider->make('App')->get('kodhe')->get($name);
 					}
 
 					return $provider;
 				}
 			}
 
-			return new ServiceSetup($flame);
+			return new ServiceSetup($kodhe);
 		},
-		'Request' => function($flame)
+		'Request' => function($kodhe)
 		{
-			return $flame->make('App')->getRequest();
+			return $kodhe->make('App')->getRequest();
 		},
 
-		'Response' => function($flame)
+		'Response' => function($kodhe)
 		{
-			return $flame->make('App')->getResponse();
+			return $kodhe->make('App')->getResponse();
 		},
 		'Model/Datastore'=> function($provider){
       $app = $provider->make('App');

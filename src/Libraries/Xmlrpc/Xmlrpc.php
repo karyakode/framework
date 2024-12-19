@@ -891,7 +891,7 @@ class XML_RPC_Response
 	 */
 	public function decode($array = NULL)
 	{
-		// $CI = flame();
+		// $CI = kodhe();
 
 		if (is_array($array))
 		{
@@ -903,7 +903,7 @@ class XML_RPC_Response
 				}
 				elseif ($this->xss_clean)
 				{
-					$array[$key] = flame()->security->xss_clean($value);
+					$array[$key] = kodhe()->security->xss_clean($value);
 				}
 			}
 
@@ -918,7 +918,7 @@ class XML_RPC_Response
 		}
 		elseif ($this->xss_clean)
 		{
-			$result = flame()->security->xss_clean($result);
+			$result = kodhe()->security->xss_clean($result);
 		}
 
 		return $result;
@@ -1523,7 +1523,7 @@ class XML_RPC_Message extends Xmlrpc
 	 */
 	public function output_parameters(array $array = array())
 	{
-		// $CI = flame();
+		// $CI = kodhe();
 
 		if ( ! empty($array))
 		{
@@ -1537,7 +1537,7 @@ class XML_RPC_Message extends Xmlrpc
 				{
 					// 'bits' is for the MetaWeblog API image bits
 					// @todo - this needs to be made more general purpose
-					$array[$key] = flame()->security->xss_clean($value);
+					$array[$key] = kodhe()->security->xss_clean($value);
 				}
 			}
 
@@ -1556,7 +1556,7 @@ class XML_RPC_Message extends Xmlrpc
 			}
 			else
 			{
-				$parameters[] = ($this->xss_clean) ? flame()->security->xss_clean($a_param) : $a_param;
+				$parameters[] = ($this->xss_clean) ? kodhe()->security->xss_clean($a_param) : $a_param;
 			}
 		}
 

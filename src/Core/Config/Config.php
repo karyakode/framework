@@ -14,10 +14,10 @@ class Config extends Legacy implements ConfigInterface
       foreach ($file as $key => $value) {
         if (is_int($key))
         {
-          flame()->set($value,$this);
+          kodhe()->set($value,$this);
           return $this->load($value, $use_sections, $fail_gracefully);
         } else {
-          flame()->set($value,$this);
+          kodhe()->set($value,$this);
           return $this->load($key, $use_sections, $fail_gracefully);
         }
       }
@@ -33,7 +33,7 @@ class Config extends Legacy implements ConfigInterface
             return $this->item($file);
         }
 
-        $_module or $_module = flame()->router->fetch_module();
+        $_module or $_module = kodhe()->router->fetch_module();
 
         // Backward function
         // Before PHP 7.1.0, list() only worked on numerical arrays and assumes the numerical indices start at 0.

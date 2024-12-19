@@ -196,11 +196,11 @@ if ( ! function_exists('img'))
 			{
 				if ($index_page === TRUE)
 				{
-					$img .= ' src="'.flame()->config->site_url($v).'"';
+					$img .= ' src="'.kodhe()->config->site_url($v).'"';
 				}
 				else
 				{
-					$img .= ' src="'.flame()->config->base_url($v).'"';
+					$img .= ' src="'.kodhe()->config->base_url($v).'"';
 				}
 			}
 			else
@@ -277,7 +277,7 @@ if ( ! function_exists('link_tag'))
 	 */
 	function link_tag($href = '', $rel = 'stylesheet', $type = 'text/css', $title = '', $media = '', $index_page = FALSE)
 	{
-		$CI = flame();
+		$CI = kodhe();
 		$link = '<link ';
 
 		if (is_array($href))

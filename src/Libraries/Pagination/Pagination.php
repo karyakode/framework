@@ -294,8 +294,8 @@ class Pagination {
 	public function __construct($params = array())
 	{
 
-		$this->CI = flame()->get('__legacy_controller');
-		flame()->load->language('pagination');
+		$this->CI = kodhe();
+		kodhe()->load->language('pagination');
 		foreach (array('first_link', 'next_link', 'prev_link', 'last_link') as $key)
 		{
 			if (($val = $this->CI->lang->line('pagination_'.$key)) !== FALSE)

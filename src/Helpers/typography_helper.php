@@ -59,7 +59,7 @@ if ( ! function_exists('nl2br_except_pre'))
 	 */
 	function nl2br_except_pre($str)
 	{
-		$CI = flame();
+		$CI = kodhe();
 		$CI->load->library('typography');
 		return $CI->typography->nl2br_except_pre($str);
 	}
@@ -78,7 +78,7 @@ if ( ! function_exists('auto_typography'))
 	 */
 	function auto_typography($str, $reduce_linebreaks = FALSE)
 	{
-		$CI = flame();
+		$CI = kodhe();
 		$CI->load->library('typography');
 		return $CI->typography->auto_typography($str, $reduce_linebreaks);
 	}
@@ -99,6 +99,6 @@ if ( ! function_exists('entity_decode'))
 	 */
 	function entity_decode($str, $charset = NULL)
 	{
-		return flame()->security->entity_decode($str, $charset);
+		return kodhe()->security->entity_decode($str, $charset);
 	}
 }

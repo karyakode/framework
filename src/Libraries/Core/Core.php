@@ -21,14 +21,14 @@ class Core
 
 
 
-    define('FLAME_VERSION', flame('setup')->get('version'));
+    define('KODHE_VERSION', kodhe('setup')->get('version'));
 
   }
 
 
-  public function getNamespace($prefix = 'flame'){
+  public function getNamespace($prefix = 'kodhe'){
 
-    return flame('setup')->get($prefix.':namespace');
+    return kodhe('setup')->get($prefix.':namespace');
   }
 
 }

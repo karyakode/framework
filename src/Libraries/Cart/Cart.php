@@ -63,7 +63,7 @@ class Cart {
 	public function __construct($params = array())
 	{
 		// Set the super object to a local variable for use later
-		$this->CI = flame();
+		$this->CI = kodhe();
 
 		// Are any config settings being passed manually?  If so, set them
 		$config = is_array($params) ? $params : array();

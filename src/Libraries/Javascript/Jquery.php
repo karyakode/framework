@@ -71,7 +71,7 @@ class Jquery extends Javascript {
 	 */
 	public function __construct($params)
 	{
-		$this->CI = flame();
+		$this->CI = kodhe();
 		extract($params);
 
 		if ($autoload === TRUE)

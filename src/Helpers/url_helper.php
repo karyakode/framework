@@ -63,7 +63,7 @@ if ( ! function_exists('site_url'))
 	 */
 	function site_url($uri = '', $protocol = NULL)
 	{
-		return flame()->config->site_url($uri, $protocol);
+		return kodhe()->config->site_url($uri, $protocol);
 	}
 }
 
@@ -84,7 +84,7 @@ if ( ! function_exists('base_url'))
 	 */
 	function base_url($uri = '', $protocol = NULL)
 	{
-		return flame()->config->base_url($uri, $protocol);
+		return kodhe()->config->base_url($uri, $protocol);
 	}
 }
 // ------------------------------------------------------------------------
@@ -103,7 +103,7 @@ if ( ! function_exists('storage_url'))
 	 */
 	function storage_url($uri = '', $protocol = NULL)
 	{
-		return flame()->config->base_url($uri, $protocol);
+		return kodhe()->config->base_url($uri, $protocol);
 	}
 }
 
@@ -121,7 +121,7 @@ if ( ! function_exists('current_url'))
 	 */
 	function current_url()
 	{
-		$CI = flame();
+		$CI = kodhe();
 		return $CI->config->site_url($CI->uri->uri_string());
 	}
 }
@@ -139,7 +139,7 @@ if ( ! function_exists('uri_string'))
 	 */
 	function uri_string()
 	{
-		return flame()->uri->uri_string();
+		return kodhe()->uri->uri_string();
 	}
 }
 
@@ -156,7 +156,7 @@ if ( ! function_exists('index_page'))
 	 */
 	function index_page()
 	{
-		return flame()->config->item('index_page');
+		return kodhe()->config->item('index_page');
 	}
 }
 

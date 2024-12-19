@@ -71,7 +71,7 @@ class Response
     function __construct()
     {
         // CI_Controller initialization
-        $this->ci = & flame();
+        $this->ci = & kodhe();
     }
 
     /**

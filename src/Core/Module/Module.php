@@ -41,7 +41,7 @@ class Module implements ModuleInterface
   			}
   			$_alias = strtolower(basename($module));
 
-  			flame()->set($_alias, self::load([$module => $params]));
+  			kodhe()->set($_alias, self::load([$module => $params]));
 
   	}
 
@@ -119,12 +119,12 @@ class Module implements ModuleInterface
             $path_system = resolve_path(BASEPATH,'controllers').'/'.self::$router->directory;
             if(file_exists($path)) {
               // load the controller class
-              $class .= flame()->config->item('controller_suffix');
+              $class .= kodhe()->config->item('controller_suffix');
               self::load_file(ucfirst($class), $path);
               // create and register the new controller
               $controller = ucfirst($class);
 
-              $namespaces = flame('setup')->get('App:namespace').str_replace(['.','/'],['','\\'],self::$router->directory);
+              $namespaces = kodhe('setup')->get('App:namespace').str_replace(['.','/'],['','\\'],self::$router->directory);
 
                 if(class_exists($namespaces.ucfirst($class))) {
                   $controller = $namespaces.ucfirst($class);
@@ -133,7 +133,7 @@ class Module implements ModuleInterface
               self::load_file(ucfirst($class), $path_system);
               // create and register the new controller
               $controller = ucfirst($class);
-              $namespaces = flame('setup')->get('namespace').str_replace(['.','/'],['','\\'],self::$router->directory);
+              $namespaces = kodhe('setup')->get('namespace').str_replace(['.','/'],['','\\'],self::$router->directory);
 
                 if(class_exists($namespaces.ucfirst($class))) {
                   //$controller = $namespaces.ucfirst($class);

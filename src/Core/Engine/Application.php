@@ -207,7 +207,7 @@ class Application {
 			file_exists($file) ? require $file : [
 				'namespace' => 'App',
 				'author' => 'Karya Kode',
-				'name' => 'Flame Framework',
+				'name' => 'Kodhe Framework',
 				'version' => '0.3',
 				'link' => 'https://karyakode.id',
 				'date' => date('Y-m-d'),

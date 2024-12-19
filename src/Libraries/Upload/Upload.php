@@ -258,7 +258,7 @@ class Upload {
 		empty($config) OR $this->initialize($config, FALSE);
 
 		$this->_mimes =& get_mimes();
-		$this->_CI = flame();
+		$this->_CI = kodhe();
 
 		log_message('info', 'Upload Class Initialized');
 	}

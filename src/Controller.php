@@ -45,15 +45,15 @@ class Controller extends BaseController
 
   public static function &get_instance($dep = null)
   {
-    global $flame;
+    global $kodhe;
 
-    if (!empty($dep) && $flame->di)
+    if (!empty($dep) && $kodhe->di)
 		{
 			$args = func_get_args();
-      $call_func = call_user_func_array(array($flame->di, 'make'), $args);
+      $call_func = call_user_func_array(array($kodhe->di, 'make'), $args);
 			return $call_func;
 		}
 
-		return $flame;
+		return $kodhe;
   }
 }

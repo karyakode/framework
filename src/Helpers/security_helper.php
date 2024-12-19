@@ -60,7 +60,7 @@ if ( ! function_exists('xss_clean'))
 	 */
 	function xss_clean($str, $is_image = FALSE)
 	{
-		return flame()->security->xss_clean($str, $is_image);
+		return kodhe()->security->xss_clean($str, $is_image);
 	}
 }
 
@@ -76,7 +76,7 @@ if ( ! function_exists('sanitize_filename'))
 	 */
 	function sanitize_filename($filename)
 	{
-		return flame()->security->sanitize_filename($filename);
+		return kodhe()->security->sanitize_filename($filename);
 	}
 }
 
@@ -116,7 +116,7 @@ if ( ! function_exists('strip_image_tags'))
 	 */
 	function strip_image_tags($str)
 	{
-		return flame()->security->strip_image_tags($str);
+		return kodhe()->security->strip_image_tags($str);
 	}
 }
 

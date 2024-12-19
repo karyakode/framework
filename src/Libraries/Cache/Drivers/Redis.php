@@ -72,11 +72,11 @@ class Redis extends Driver
 			? 'del'
 			: 'delete';
 
-		$CI = flame();
+		$CI = kodhe();
 
-		if (flame()->config->load('redis', TRUE, TRUE))
+		if (kodhe()->config->load('redis', TRUE, TRUE))
 		{
-			$config = array_merge(self::$_default_config, flame()->config->item('redis'));
+			$config = array_merge(self::$_default_config, kodhe()->config->item('redis'));
 		}
 		else
 		{

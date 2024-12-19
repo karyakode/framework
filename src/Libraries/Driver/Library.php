@@ -111,7 +111,7 @@ class Library {
 		}
 
 		// Get package paths and filename case variations to search
-		$CI = flame();
+		$CI = kodhe();
 		$paths = $CI->load->get_package_paths(TRUE);
 
 		// Is there an extension?

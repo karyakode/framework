@@ -163,7 +163,7 @@ if ( ! function_exists('create_captcha'))
 
 			// We'll try using the operating system's PRNG first,
 			// which we can access through CI_Security::get_random_bytes()
-			$security = flame()->security;
+			$security = kodhe()->security;
 
 			// To avoid numerous get_random_bytes() calls, we'll
 			// just try fetching as much bytes as we need at once.

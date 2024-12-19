@@ -7,8 +7,8 @@ class BaseController
 
     public function __construct()
     {
-      global $flame;
-      $flame = $this;
+      global $kodhe;
+      $kodhe = $this;
       log_message('info', 'Controller Class Initialized');
       if(!$this->has('__legacy_controller')) $this->set('__legacy_controller', $this);
     }

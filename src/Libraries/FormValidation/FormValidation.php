@@ -91,7 +91,7 @@ class FormValidation {
 	public function __construct($rules = array())
 	{
 
-		$this->CI = flame()->get('__legacy_controller');
+		$this->CI = kodhe()->get('__legacy_controller');
 
 		// applies delimiters set in config file.
 		if (isset($rules['error_prefix']))
@@ -109,7 +109,7 @@ class FormValidation {
 		$this->_config_rules = $rules;
 
 		// Automatically load the form helper
-		flame()->load->helper('form');
+		kodhe()->load->helper('form');
 
 		log_message('info', 'Form Validation Class Initialized');
 	}

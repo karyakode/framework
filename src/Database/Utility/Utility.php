@@ -258,7 +258,7 @@ abstract class Utility {
 		extract($params);
 
 		// Load the xml helper
-		flame()->load->helper('xml');
+		kodhe()->load->helper('xml');
 
 		// Generate the result
 		$xml = '<'.$root.'>'.$newline;
@@ -368,7 +368,7 @@ abstract class Utility {
 			}
 
 			// Load the Zip class and output it
-			$CI =& flame();
+			$CI =& kodhe();
 			$CI->load->library('zip');
 			$CI->zip->add_data($prefs['filename'], $this->_backup($prefs));
 			return $CI->zip->get_zip();

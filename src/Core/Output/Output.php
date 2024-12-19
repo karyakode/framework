@@ -170,7 +170,7 @@ class Output {
 		$BM =& load_class('Kodhe\Core\Benchmark\Benchmark');
 		$CFG =& load_class('Kodhe\Core\Config\Config');
 
-		$CI = flame();
+		$CI = kodhe();
 
 		if ($output === '')
 		{
@@ -264,7 +264,7 @@ class Output {
 	 */
 	public function _write_cache($output)
 	{
-		$CI = flame();
+		$CI = kodhe();
 		$path = $CI->config->item('cache_path');
 		$cache_path = ($path === '') ? STORAGEPATH.'cache/' : $path;
 
@@ -430,7 +430,7 @@ class Output {
 	 */
 	public function delete_cache($uri = '')
 	{
-		$CI = flame();
+		$CI = kodhe();
 		$cache_path = $CI->config->item('cache_path');
 		if ($cache_path === '')
 		{

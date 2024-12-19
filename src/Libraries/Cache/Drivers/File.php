@@ -26,7 +26,7 @@ class File extends Driver {
 	 */
 	public function __construct()
 	{
-		$CI = flame();
+		$CI = kodhe();
 		$CI->load->helper('file');
 		$path = $CI->config->item('cache_path');
 		$this->_cache_path = ($path === '') ? resolve_path(STORAGEPATH, 'cache').'/' : $path;

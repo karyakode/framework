@@ -427,7 +427,7 @@ class Zip {
 			$filename .= '.zip';
 		}
 
-		flame()->load->helper('download');
+		kodhe()->load->helper('download');
 		$get_zip = $this->get_zip();
 		$zip_content =& $get_zip;
 

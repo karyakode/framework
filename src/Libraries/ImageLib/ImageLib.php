@@ -1769,21 +1769,21 @@ class ImageLib {
 	 */
 	public function set_error($msg)
 	{
-		// $CI = flame();
-		flame()->lang->load('imglib');
+		// $CI = kodhe();
+		kodhe()->lang->load('imglib');
 
 		if (is_array($msg))
 		{
 			foreach ($msg as $val)
 			{
-				$msg = (flame()->lang->line($val) === FALSE) ? $val : flame()->lang->line($val);
+				$msg = (kodhe()->lang->line($val) === FALSE) ? $val : kodhe()->lang->line($val);
 				$this->error_msg[] = $msg;
 				log_message('error', $msg);
 			}
 		}
 		else
 		{
-			$msg = (flame()->lang->line($msg) === FALSE) ? $msg : flame()->lang->line($msg);
+			$msg = (kodhe()->lang->line($msg) === FALSE) ? $msg : kodhe()->lang->line($msg);
 			$this->error_msg[] = $msg;
 			log_message('error', $msg);
 		}

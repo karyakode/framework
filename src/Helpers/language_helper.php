@@ -63,7 +63,7 @@ if ( ! function_exists('lang'))
 	 */
 	function lang($line, $for = '', $attributes = array())
 	{
-		$line = flame()->lang->line($line);
+		$line = kodhe()->lang->line($line);
 
 		if ($for !== '')
 		{

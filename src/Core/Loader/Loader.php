@@ -49,11 +49,11 @@ class Loader {
 	public function initialize(){
 		// autoload module items
 		$this->autoloader->loader([]);
-		$this->autoloader->_flame_autoloader();
+		$this->autoloader->_kodhe_autoloader();
 	}
 
 	protected function _ci_autoloader(){
-		$this->autoloader->_flame_autoloader();
+		$this->autoloader->_kodhe_autoloader();
 	}
 
 	public function is_loaded($class){
@@ -63,7 +63,7 @@ class Loader {
 	public function library($library, $params = null, $object_name = null)
 	{
 		$library = $this->library->make($library, $params, $object_name);
-		//$this->_ci_classes = array_merge($this->_ci_classes, $this->library->_flame_classes);
+		//$this->_ci_classes = array_merge($this->_ci_classes, $this->library->_kodhe_classes);
 		return $library;
 	}
 
@@ -89,7 +89,7 @@ class Loader {
 
 	public function language($langfile, $idiom = '', $return = false, $add_suffix = true, $alt_path = '')
 	{
-			flame()->lang->load($langfile, $idiom, $return, $add_suffix, $alt_path);
+			kodhe()->lang->load($langfile, $idiom, $return, $add_suffix, $alt_path);
 			return $this;
 	}
 
@@ -104,7 +104,7 @@ class Loader {
 
 	public function config($file, $use_sections = false, $fail_gracefully = false)
 	{
-			return flame()->config->load($file, $use_sections, $fail_gracefully);
+			return kodhe()->config->load($file, $use_sections, $fail_gracefully);
 	}
 
 	public function driver($library, $params = NULL, $object_name = NULL){
@@ -134,13 +134,13 @@ class Loader {
 
 	public function _ci_prepare_view_vars($vars)
 	{
-		return $this->view->_flame_prepare_view_vars($vars);
+		return $this->view->_kodhe_prepare_view_vars($vars);
 	}
 
 
 	public function file($path, $return = FALSE)
 	{
-		return $this->view->_flame_load($path, $return);
+		return $this->view->_kodhe_load($path, $return);
 	}
 
 	public function vars($vars, $val = '')
@@ -166,7 +166,7 @@ class Loader {
 
 	protected function &_ci_get_component($component)
 	{
-		return flame()->$component;
+		return kodhe()->$component;
 	}
 
 	public function module($module, $params = null)
