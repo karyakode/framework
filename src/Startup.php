@@ -1,27 +1,5 @@
 <?php
 
-if (!function_exists('resolve_path')) {
-
-    function resolve_path(string $basePath = '', string $directory = ''): string {
-        $basePath = rtrim($basePath, '/') . '/';
-
-        // Check lowercase directory first, then uppercase.
-        $uppercasePath = $basePath . ucwords($directory);
-        $lowercasePath = $basePath . strtolower($directory);
-        $ucfirstcasePath = $basePath . ucfirst(strtolower($directory));
-
-        if (is_dir($lowercasePath)) {
-            return $lowercasePath;
-        } elseif (is_dir($ucfirstcasePath)) {
-            return $ucfirstcasePath;
-        }
-
-        // Return the uppercase directory path as default if neither exists.
-        return $uppercasePath;
-    }
-}
-
-
 defined('BASEPATH') || define('BASEPATH', __DIR__.DIRECTORY_SEPARATOR);
 defined('STORAGEPATH') || define('STORAGEPATH', FCPATH.'storage'.DIRECTORY_SEPARATOR);
 define('CI_VERSION', '3.1.11');

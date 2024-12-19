@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
 
 if ( ! function_exists('is_php'))
 {
@@ -670,12 +670,14 @@ if (!function_exists('make_namespace')) {
 if (!function_exists('resolve_namespace')) {
     function resolve_namespace(string $sub_namespace, string $class, bool $system = false, bool $resolve = true): string
     {
+			// Menentukan namespace dari konfigurasi setup
+				$appSetup = file_exists(APPPATH . 'app.setup.php') ? include(APPPATH . 'app.setup.php') : ['namespace' => 'App'];
         if (!$resolve) {
             return $class; // Return only the class name if resolving is disabled.
         }
 
         // Determine the root namespace based on the system flag.
-        $root_namespace = $system ? 'Flame' : APP_NAMESPACE;
+        $root_namespace = $system ? 'Flame' : $appSetup['namespace'];
 
         // Build the fully qualified namespace.
         return make_namespace($root_namespace, $sub_namespace, $class);
