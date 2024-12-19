@@ -90,7 +90,7 @@ class Lang {
 		}
 
 		// Load the base file, so any others found can override it
-		$basepath = resolve_path(BASEPATH,'language').'/'.$idiom.'/'.$langfile;
+		$basepath = resolve_path(VENDORPATH,'language').'/'.$idiom.'/'.$langfile;
 		if (($found = file_exists($basepath)) === TRUE)
 		{
 			include($basepath);
