@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Cubrid;
+<?php namespace Kodhe\Database\Driver\Drivers\Cubrid;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		Esen Sagynov
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Result extends \Flame\Database\Result\Result {
+class Result extends \Kodhe\Database\Result\Result {
 
 	/**
 	 * Number of rows in the result set

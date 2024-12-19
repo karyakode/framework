@@ -1,5 +1,5 @@
-<?php namespace Flame\Libraries\Core;
-use Flame\Service\Module\Module;
+<?php namespace Kodhe\Libraries\Core;
+use Kodhe\Service\Module\Module;
 
 class Core
 {

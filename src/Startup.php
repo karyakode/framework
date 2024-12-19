@@ -29,8 +29,8 @@ if (file_exists(resolve_path(APPPATH,'config').'/constants.php'))
    echo 'Your Core/Autoloader.php file does not appear to be set correctly.';
    exit(3); // EXIT_CONFIG
  } else {
-  class_exists('Flame\Core\Engine\Autoloader') OR require BASEPATH.'Core/Engine/Autoloader.php';
- 	Flame\Core\Engine\Autoloader::getInstance()->register();
+  class_exists('Kodhe\Core\Engine\Autoloader') OR require BASEPATH.'Core/Engine/Autoloader.php';
+ 	Kodhe\Core\Engine\Autoloader::getInstance()->register();
  }
 
 /*
@@ -106,8 +106,8 @@ if (file_exists(resolve_path(APPPATH,'config').'/constants.php'))
  * ------------------------------------------------------
  */
 
- $framework = new \Flame\Core\Engine\Framework(new \Flame\Core\Dependency\DependencyResolver());
- //$framework = new \Flame\Core\Engine\Framework();
+ $framework = new \Kodhe\Core\Engine\Framework(new \Kodhe\Core\Dependency\DependencyResolver());
+ //$framework = new \Kodhe\Core\Engine\Framework();
 
 	$charset = strtoupper(config_item('charset'));
 	ini_set('default_charset', $charset);
@@ -182,7 +182,7 @@ if (file_exists(resolve_path(APPPATH,'config').'/constants.php'))
 
 	function &flame($dep = NULL)
 	{
-		return Flame\Controller::get_instance($dep);
+		return Kodhe\Controller::get_instance($dep);
 	}
 
   function &get_instance() {
@@ -195,7 +195,7 @@ if (file_exists(resolve_path(APPPATH,'config').'/constants.php'))
  *  Parse the request
  * ------------------------------------------------------
  */
-	$request = \Flame\Core\Engine\Http\Request::fromGlobals();
+	$request = \Kodhe\Core\Engine\Http\Request::fromGlobals();
 
 /*
  * ------------------------------------------------------

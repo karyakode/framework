@@ -1,8 +1,8 @@
 <?php
-namespace Flame\Core\Api;
+namespace Kodhe\Core\Api;
 
-use Flame\Core\Api\Http\Request;
-use Flame\Core\Api\Http\Response;
+use Kodhe\Core\Api\Http\Request;
+use Kodhe\Core\Api\Http\Response;
 
 /**
  * RESTful API Controller
@@ -24,7 +24,7 @@ use Flame\Core\Api\Http\Response;
  * $route['resource_name/(:num)'] = '[Controller]/route/$1';
  * ```
  */
-class Controller extends \Flame\Controller
+class Controller extends \Kodhe\Controller
 {
     /**
      * RESTful API resource routes

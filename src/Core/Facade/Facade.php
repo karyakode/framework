@@ -1,5 +1,5 @@
 <?php
-namespace Flame\Core\Facade;
+namespace Kodhe\Core\Facade;
 
 use InvalidArgumentException;
 use RuntimeException;

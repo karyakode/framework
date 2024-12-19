@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Mssql;
+<?php namespace Kodhe\Database\Driver\Drivers\Mssql;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Driver extends \Flame\Database\DB {
+class Driver extends \Kodhe\Database\DB {
 
 	/**
 	 * Database driver

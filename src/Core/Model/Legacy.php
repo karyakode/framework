@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Model;
+<?php namespace Kodhe\Core\Model;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Legacy {

@@ -1,6 +1,6 @@
-<?php namespace Flame\Core\Router; defined('BASEPATH') OR exit('No direct script access allowed');
+<?php namespace Kodhe\Core\Router; defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Flame\Core\Module\Module;
+use Kodhe\Core\Module\Module;
 
 class Router extends Legacy
 {

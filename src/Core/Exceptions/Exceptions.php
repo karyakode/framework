@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Exceptions;
+<?php namespace Kodhe\Core\Exceptions;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 

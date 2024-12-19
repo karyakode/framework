@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Session;
+<?php namespace Kodhe\Libraries\Session;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

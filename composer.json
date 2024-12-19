@@ -38,7 +38,7 @@
         "src/Common.php"
       ],
       "psr-4": {
-          "Flame\\": "src/"
+        "Kodhe\\": "src/"
       }
     },
     "minimum-stability": "dev",

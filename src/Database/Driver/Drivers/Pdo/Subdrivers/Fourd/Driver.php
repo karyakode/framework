@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Pdo\Subdrivers\Fourd;
+<?php namespace Kodhe\Database\Driver\Drivers\Pdo\Subdrivers\Fourd;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Driver extends \Flame\Database\Driver\Drivers\Pdo\Driver {
+class Driver extends \Kodhe\Database\Driver\Drivers\Pdo\Driver {
 
 	/**
 	 * Sub-driver

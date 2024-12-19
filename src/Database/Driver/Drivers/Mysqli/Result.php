@@ -1,7 +1,7 @@
-<?php namespace Flame\Database\Driver\Drivers\Mysqli;
+<?php namespace Kodhe\Database\Driver\Drivers\Mysqli;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Result extends \Flame\Database\Result\Result {
+class Result extends \Kodhe\Database\Result\Result {
 
 	public function num_rows()
 	{

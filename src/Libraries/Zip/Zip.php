@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Zip;
+<?php namespace Kodhe\Libraries\Zip;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

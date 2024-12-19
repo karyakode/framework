@@ -1,7 +1,7 @@
-<?php namespace Flame\Core\Config;
+<?php namespace Kodhe\Core\Config;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Flame\Core\Module\Module;
+use Kodhe\Core\Module\Module;
 
 class Config extends Legacy implements ConfigInterface
 {

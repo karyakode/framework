@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Config;
+<?php namespace Kodhe\Core\Config;
 
 interface ConfigInterface
 {

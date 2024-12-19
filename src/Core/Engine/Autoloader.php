@@ -1,6 +1,6 @@
 <?php
 
-namespace Flame\Core\Engine;
+namespace Kodhe\Core\Engine;
 
 class Autoloader {
 

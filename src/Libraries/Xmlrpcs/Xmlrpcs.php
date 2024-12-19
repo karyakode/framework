@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Xmlrpcs;
+<?php namespace Kodhe\Libraries\Xmlrpcs;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 if ( ! function_exists('xml_parser_create'))
@@ -6,7 +6,7 @@ if ( ! function_exists('xml_parser_create'))
 	show_error('Your PHP installation does not support XML');
 }
 
-if ( ! class_exists('Flame\Libraries\Xmlrpc\Xmlrpc', FALSE))
+if ( ! class_exists('Kodhe\Libraries\Xmlrpc\Xmlrpc', FALSE))
 {
 	show_error('You must load the Xmlrpc class before loading the Xmlrpcs class in order to create a server.');
 }
@@ -22,7 +22,7 @@ if ( ! class_exists('Flame\Libraries\Xmlrpc\Xmlrpc', FALSE))
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/libraries/xmlrpc.html
  */
-class Xmlrpcs extends \Flame\Libraries\Xmlrpc\Xmlrpc {
+class Xmlrpcs extends \Kodhe\Libraries\Xmlrpc\Xmlrpc {
 
 	/**
 	 * Array of methods mapped to function names and signatures

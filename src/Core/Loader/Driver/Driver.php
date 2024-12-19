@@ -1,8 +1,8 @@
 <?php
 
-namespace Flame\Core\Loader\Driver;
+namespace Kodhe\Core\Loader\Driver;
 
-use Flame\Core\Loader\Library\Library;
+use Kodhe\Core\Loader\Library\Library;
 
 class Driver
 {

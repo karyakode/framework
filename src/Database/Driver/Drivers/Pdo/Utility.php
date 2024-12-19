@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Pdo;
+<?php namespace Kodhe\Database\Driver\Drivers\Pdo;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link		https://codeigniter.com/database/
  */
 use PDO;
-class Utility extends \Flame\Database\Utility\Utility {
+class Utility extends \Kodhe\Database\Utility\Utility {
 
 	/**
 	 * Export

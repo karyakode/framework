@@ -1,7 +1,7 @@
-<?php namespace Flame\Core\Loader;
+<?php namespace Kodhe\Core\Loader;
 
-use Flame\Core\Module\Module;
-use Flame\Core\Path\Paths;
+use Kodhe\Core\Module\Module;
+use Kodhe\Core\Path\Paths;
 
 class Autoloader
 {

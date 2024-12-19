@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Loader\Package;
+<?php namespace Kodhe\Core\Loader\Package;
 
 class Package
 {
@@ -9,7 +9,7 @@ class Package
   protected $_flame_helper_paths;
 
 
-  function __construct(\Flame\Core\Path\Paths $Paths)
+  function __construct(\Kodhe\Core\Path\Paths $Paths)
   {
 
     $this->_flame_view_paths = $Paths::$viewPaths;

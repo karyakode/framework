@@ -1,6 +1,6 @@
-<?php namespace Flame\Core\Module;
+<?php namespace Kodhe\Core\Module;
 
-use Flame\Core\Router\Router;
+use Kodhe\Core\Router\Router;
 
 class Module implements ModuleInterface
 {

@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Cubrid;
+<?php namespace Kodhe\Database\Driver\Drivers\Cubrid;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		Esen Sagynov
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Driver extends \Flame\Database\DB {
+class Driver extends \Kodhe\Database\DB {
 
 	/**
 	 * Database driver

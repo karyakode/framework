@@ -1,14 +1,14 @@
-<?php namespace Flame\Core\Loader;
+<?php namespace Kodhe\Core\Loader;
 
-use Flame\Core\Module\Module;
-use Flame\Core\Facade\Facade;
-use Flame\Core\Loader\Plugin\Plugin;
-use Flame\Core\Loader\Package\Package;
-use Flame\Core\Loader\Library\Library;
-use Flame\Core\Loader\Model\Model;
-use Flame\Core\Loader\Helper\Helper;
-use Flame\Core\Loader\Driver\Driver;
-use Flame\Core\Loader\View\View;
+use Kodhe\Core\Module\Module;
+use Kodhe\Core\Facade\Facade;
+use Kodhe\Core\Loader\Plugin\Plugin;
+use Kodhe\Core\Loader\Package\Package;
+use Kodhe\Core\Loader\Library\Library;
+use Kodhe\Core\Loader\Model\Model;
+use Kodhe\Core\Loader\Helper\Helper;
+use Kodhe\Core\Loader\Driver\Driver;
+use Kodhe\Core\Loader\View\View;
 
 class Loader {
 

@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Driver;
+<?php namespace Kodhe\Libraries\Driver;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 use ReflectionObject;
@@ -73,7 +73,7 @@ class Library {
 			$lib_name = basename(str_replace('\\','/',$lib_name));
 		}
 
-		$class_name = 'Flame\Libraries\\'.$lib_name.'\Drivers\\'.ucwords($child);
+		$class_name = 'Kodhe\Libraries\\'.$lib_name.'\Drivers\\'.ucwords($child);
 
 		if(class_exists($class_name)) {
 			// Instantiate, decorate and add child

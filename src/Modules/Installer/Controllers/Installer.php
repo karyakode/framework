@@ -1,4 +1,4 @@
-<?php namespace Flame\Modules\Installer\Controllers;
+<?php namespace Kodhe\Modules\Installer\Controllers;
 
 class Installer extends \CI_Controller {
 

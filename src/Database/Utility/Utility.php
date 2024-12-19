@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Utility;
+<?php namespace Kodhe\Database\Utility;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

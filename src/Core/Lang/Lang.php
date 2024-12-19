@@ -1,7 +1,7 @@
-<?php namespace Flame\Core\Lang;
+<?php namespace Kodhe\Core\Lang;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Flame\Core\Module\Module;
+use Kodhe\Core\Module\Module;
 
 class Lang {
 

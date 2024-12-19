@@ -1,5 +1,5 @@
 <?php
-namespace Flame\Core\Contracts;
+namespace Kodhe\Core\Contracts;
 
 interface DependencyResolverInterface
 {

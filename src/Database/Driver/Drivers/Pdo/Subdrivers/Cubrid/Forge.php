@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Pdo\Subdrivers\Cubrid;
+<?php namespace Kodhe\Database\Driver\Drivers\Pdo\Subdrivers\Cubrid;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Forge extends \Flame\Database\Driver\Drivers\Pdo\Forge {
+class Forge extends \Kodhe\Database\Driver\Drivers\Pdo\Forge {
 
 	/**
 	 * CREATE DATABASE statement

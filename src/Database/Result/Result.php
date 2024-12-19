@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Result;
+<?php namespace Kodhe\Database\Result;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Result {
@@ -11,7 +11,7 @@ class Result {
 	public $current_row			= 0;
 	public $num_rows;
 	public $row_data;
-	
+
 	public function __construct(&$driver_object)
 	{
 		$this->conn_id = $driver_object->conn_id;

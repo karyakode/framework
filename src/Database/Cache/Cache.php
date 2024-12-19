@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Cache;
+<?php namespace Kodhe\Database\Cache;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cache {

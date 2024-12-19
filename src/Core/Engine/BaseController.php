@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Engine;
+<?php namespace Kodhe\Core\Engine;
 
 class BaseController
 {

@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Engine\Http;
+<?php namespace Kodhe\Core\Engine\Http;
 
 /**
  * Core Response

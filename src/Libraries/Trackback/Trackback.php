@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Trackback;
+<?php namespace Kodhe\Libraries\Trackback;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

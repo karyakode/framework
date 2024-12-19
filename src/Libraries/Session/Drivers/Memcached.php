@@ -1,7 +1,7 @@
-<?php namespace Flame\Libraries\Session\Drivers;
+<?php namespace Kodhe\Libraries\Session\Drivers;
 defined('BASEPATH') OR exit('No direct script access allowed');
-use Flame\Libraries\Session\Driver;
-use Flame\Libraries\Session\HandlerInterface;
+use Kodhe\Libraries\Session\Driver;
+use Kodhe\Libraries\Session\HandlerInterface;
 
 /**
  * CodeIgniter Session Memcached Driver

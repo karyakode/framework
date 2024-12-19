@@ -1,10 +1,10 @@
 <?php
-namespace Flame\Core\Engine;
+namespace Kodhe\Core\Engine;
 
-use Flame\Core\Dependency\ServiceProvider;
+use Kodhe\Core\Dependency\ServiceProvider;
 use FilesystemIterator;
-use Flame\Core\Engine\Http\Request;
-use Flame\Core\Engine\Http\Response;
+use Kodhe\Core\Engine\Http\Request;
+use Kodhe\Core\Engine\Http\Response;
 
 class Application {
 

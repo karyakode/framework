@@ -1,7 +1,7 @@
-<?php namespace Flame\Database\Driver\Drivers\Mysqli;
+<?php namespace Kodhe\Database\Driver\Drivers\Mysqli;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Forge extends \Flame\Database\Forge\Forge {
+class Forge extends \Kodhe\Database\Forge\Forge {
 
 	protected $_create_database	= 'CREATE DATABASE %s CHARACTER SET %s COLLATE %s';
 	protected $_create_table_keys	= TRUE;

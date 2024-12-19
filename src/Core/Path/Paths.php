@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Path;
+<?php namespace Kodhe\Core\Path;
 
 define('VENDORPATH', dirname(dirname(__DIR__)));
 

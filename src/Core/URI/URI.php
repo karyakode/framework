@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\URI;
+<?php namespace Kodhe\Core\URI;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class URI {
@@ -11,7 +11,7 @@ class URI {
 
 	public function __construct()
 	{
-		$this->config =& load_class('Flame\Core\Config\Config');
+		$this->config =& load_class('Kodhe\Core\Config\Config');
 		if (is_cli() OR $this->config->item('enable_query_strings') !== TRUE)
 		{
 			$this->_permitted_uri_chars = $this->config->item('permitted_uri_chars');

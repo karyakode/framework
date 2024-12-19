@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Sqlsrv;
+<?php namespace Kodhe\Database\Driver\Drivers\Sqlsrv;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Fesult extends \Flame\Database\Result\Result {
+class Fesult extends \Kodhe\Database\Result\Result {
 
 	/**
 	 * Scrollable flag

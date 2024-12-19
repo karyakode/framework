@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\UserAgent;
+<?php namespace Kodhe\Libraries\UserAgent;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

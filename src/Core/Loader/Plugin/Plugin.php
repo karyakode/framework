@@ -1,6 +1,6 @@
-<?php namespace Flame\Core\Loader\Plugin;
+<?php namespace Kodhe\Core\Loader\Plugin;
 
-use Flame\Core\Module\Module;
+use Kodhe\Core\Module\Module;
 
 class Plugin
 {

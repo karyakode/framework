@@ -129,7 +129,7 @@ if ( ! function_exists('load_class'))
 			 }
 
 
-			 $name_namespace = 'Flame\\'.ucwords(str_replace('/','\\',$directory)).'\\'.$class;
+			 $name_namespace = 'Kodhe\\'.ucwords(str_replace('/','\\',$directory)).'\\'.$class;
 			 $name_subnamespace = $name_namespace.'\\'.$class;
 			 // Is class extension in core?
 			if (class_exists($name_namespace) === TRUE){

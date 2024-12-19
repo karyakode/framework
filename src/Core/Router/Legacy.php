@@ -1,6 +1,6 @@
-<?php namespace Flame\Core\Router; defined('BASEPATH') OR exit('No direct script access allowed');
+<?php namespace Kodhe\Core\Router; defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Flame\Core\Module\Module;
+use Kodhe\Core\Module\Module;
 
 class Legacy {
 
@@ -16,8 +16,8 @@ class Legacy {
 	public function __construct($routing = NULL)
 	{
 
-		$this->config =& load_class('Flame\Core\Config\Config');
-		$this->uri =  load_class('Flame\Core\URI\URI');
+		$this->config =& load_class('Kodhe\Core\Config\Config');
+		$this->uri =  load_class('Kodhe\Core\URI\URI');
 		$this->enable_query_strings = ( ! is_cli() && $this->config->item('enable_query_strings') === TRUE);
 
 		// If a directory override is configured, it has to be set before any dynamic routing logic

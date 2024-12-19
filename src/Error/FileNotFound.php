@@ -1,6 +1,6 @@
 <?php
 
-namespace Flame\Error;
+namespace Kodhe\Error;
 
 /**
  * FileNotFound Error

@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Output;
+<?php namespace Kodhe\Core\Output;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Output {
@@ -167,8 +167,8 @@ class Output {
 
 	public function _display($output = '')
 	{
-		$BM =& load_class('Flame\Core\Benchmark\Benchmark');
-		$CFG =& load_class('Flame\Core\Config\Config');
+		$BM =& load_class('Kodhe\Core\Benchmark\Benchmark');
+		$CFG =& load_class('Kodhe\Core\Config\Config');
 
 		$CI = flame();
 

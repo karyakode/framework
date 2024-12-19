@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver;
+<?php namespace Kodhe\Database\Driver;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 abstract class Driver {
@@ -282,7 +282,7 @@ abstract class Driver {
 		// result object and save it to a cache file.
 		if ($this->cache_on === TRUE && $this->_cache_init())
 		{
-			$CR = new \Flame\Database\Result\Result($this);
+			$CR = new \Kodhe\Database\Result\Result($this);
 			$CR->result_object	= $RES->result_object();
 			$CR->result_array	= $RES->result_array();
 			$CR->num_rows		= $RES->num_rows();
@@ -299,7 +299,7 @@ abstract class Driver {
 
 	public function load_rdriver()
 	{
-		$driver = 'Flame\Database\Driver\Drivers\\'.ucwords($this->dbdriver).'\Result';
+		$driver = 'Kodhe\Database\Driver\Drivers\\'.ucwords($this->dbdriver).'\Result';
 
 		return $driver;
 	}
@@ -870,7 +870,7 @@ abstract class Driver {
 			return TRUE;
 		}
 
-		$this->CACHE = new \Flame\Database\Cache\Cache($this); // pass db object to support multiple db connections and returned db objects
+		$this->CACHE = new \Kodhe\Database\Cache\Cache($this); // pass db object to support multiple db connections and returned db objects
 		return TRUE;
 	}
 

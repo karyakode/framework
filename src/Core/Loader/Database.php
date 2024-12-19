@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Loader;
+<?php namespace Kodhe\Core\Loader;
 
 
 class Database
@@ -14,25 +14,25 @@ class Database
 
   		if ($return === TRUE)
   		{
-  			return \Flame\Database\Database::DB($params, $query_builder);
+  			return \Kodhe\Database\Database::DB($params, $query_builder);
   		}
 
       if(flame()->has('db')) return;
   		// Load the DB class
-  		flame()->set('db', \Flame\Database\Database::DB($params, $query_builder));
+  		flame()->set('db', \Kodhe\Database\Database::DB($params, $query_builder));
 
   	}
 
   	public static function dbutil($db = NULL, $return = FALSE)
   	{
 
-  		if ( ! is_object($db) OR ! ($db instanceof \Flame\Database\DB))
+  		if ( ! is_object($db) OR ! ($db instanceof \Kodhe\Database\DB))
   		{
-  			class_exists('Flame\Database\DB', FALSE) OR self::database();
+  			class_exists('Kodhe\Database\DB', FALSE) OR self::database();
   			$db =& flame()->db;
   		}
 
-      $class = 'Flame\Database\Driver\Drivers\\'.ucwords($this->dbdriver).'\Utility';
+      $class = 'Kodhe\Database\Driver\Drivers\\'.ucwords($this->dbdriver).'\Utility';
 
   		if ($return === TRUE)
   		{
@@ -46,19 +46,19 @@ class Database
 
   	public static function dbforge($db = NULL, $return = FALSE)
   	{
-  		if ( ! is_object($db) OR ! ($db instanceof \Flame\Database\DB))
+  		if ( ! is_object($db) OR ! ($db instanceof \Kodhe\Database\DB))
   		{
-  			class_exists('Flame\Database\DB', FALSE) OR self::database();
+  			class_exists('Kodhe\Database\DB', FALSE) OR self::database();
   			$db =& flame()->db;
   		}
 
   		if ( ! empty($db->subdriver))
   		{
-        $class = 'Flame\Database\Driver\Drivers\\'.ucwords($db->dbdriver).'\Subdrivers\\'.ucwords($db->subdriver).'\Forge';
+        $class = 'Kodhe\Database\Driver\Drivers\\'.ucwords($db->dbdriver).'\Subdrivers\\'.ucwords($db->subdriver).'\Forge';
   		}
   		else
   		{
-        $class = 'Flame\Database\Driver\Drivers\\'.ucwords($db->dbdriver).'\Forge';
+        $class = 'Kodhe\Database\Driver\Drivers\\'.ucwords($db->dbdriver).'\Forge';
   		}
 
   		if ($return === TRUE)

@@ -1,16 +1,16 @@
-<?php namespace Flame\Core\Legacy;
+<?php namespace Kodhe\Core\Legacy;
 
-use Flame\Core\Loader\Plugin\Plugin;
-use Flame\Core\Loader\Package\Package;
-use Flame\Core\Loader\Library\Library;
-use Flame\Core\Loader\Model\Model;
-use Flame\Core\Loader\Helper\Helper;
-use Flame\Core\Loader\Driver\Driver;
-use Flame\Core\Loader\View\View;
-use Flame\Core\Loader\Autoloader;
-use Flame\Core\Facade\Facade;
-use Flame\Core\Path\Paths;
-use Flame\Core\Dependency\DependencyResolver;
+use Kodhe\Core\Loader\Plugin\Plugin;
+use Kodhe\Core\Loader\Package\Package;
+use Kodhe\Core\Loader\Library\Library;
+use Kodhe\Core\Loader\Model\Model;
+use Kodhe\Core\Loader\Helper\Helper;
+use Kodhe\Core\Loader\Driver\Driver;
+use Kodhe\Core\Loader\View\View;
+use Kodhe\Core\Loader\Autoloader;
+use Kodhe\Core\Facade\Facade;
+use Kodhe\Core\Path\Paths;
+use Kodhe\Core\Dependency\DependencyResolver;
 class Legacy {
 
 	protected $router_ready = FALSE;
@@ -49,7 +49,7 @@ class Legacy {
 
 	private function setFacade(Facade $facade){
 
-		$this->resolve->resolve('Flame\Core\Loader\Loader', []);
+		$this->resolve->resolve('Kodhe\Core\Loader\Loader', []);
 
 		foreach (is_loaded() as $var => $class)
 		{
@@ -72,7 +72,7 @@ class Legacy {
 	 */
 	public function overrideConfig(array $config)
 	{
-		$config =& load_class('Flame\Core\Config\Config', 'core');// new \Flame\Core\Config\Config();
+		$config =& load_class('Kodhe\Core\Config\Config', 'core');// new \Kodhe\Core\Config\Config();
 		$config->_assign_to_config($config);
 	}
 
@@ -81,7 +81,7 @@ class Legacy {
 	 */
 	public function overrideRouting(array $routing)
 	{
-		$router =& load_class('Flame\Core\Router\Router');// new \Flame\Core\Router\Router();
+		$router =& load_class('Kodhe\Core\Router\Router');// new \Kodhe\Core\Router\Router();
 		if ( ! $this->router_ready)
 		{
 			$router->_set_routing();
@@ -97,8 +97,8 @@ class Legacy {
 	 */
 	public function getRouting()
 	{
-		$router =& load_class('Flame\Core\Router\Router');//new \Flame\Core\Router\Router();
-		$uri =& load_class('Flame\Core\URI\URI');
+		$router =& load_class('Kodhe\Core\Router\Router');//new \Kodhe\Core\Router\Router();
+		$uri =& load_class('Kodhe\Core\URI\URI');
 		if ( ! $this->router_ready)
 		{
 			$router->_set_routing();
@@ -119,7 +119,7 @@ class Legacy {
 	public function includeBaseController()
 	{
 
-		class_alias('Flame\Controller', 'CI_Controller');
+		class_alias('Kodhe\Controller', 'CI_Controller');
 
 		$subclass_prefix = $GLOBALS['CFG']->item('subclass_prefix').'Controller';
 
@@ -135,7 +135,7 @@ class Legacy {
 	 */
 	public function loadController($routing)
 	{
-		$modules = new \Flame\Core\Module\Module();
+		$modules = new \Kodhe\Core\Module\Module();
 
 		foreach ($modules::getLocations() as $location => $offset) {
 			$path = $location.'/'.str_replace($offset,'',$routing['directory']).$routing['class'].'.php';
@@ -152,8 +152,8 @@ class Legacy {
 
 		if ( ! file_exists(resolve_path(APPPATH,'controllers').'/'.$routing['directory'].$routing['class'].'.php'))
 		{
-			if (method_exists('Flame\Modules\NotFound\Controllers\NotFound', 'index')) {
-				return call_user_func_array(['Flame\Modules\NotFound\Controllers\NotFound', 'index'], array());
+			if (method_exists('Kodhe\Modules\NotFound\Controllers\NotFound', 'index')) {
+				return call_user_func_array(['Kodhe\Modules\NotFound\Controllers\NotFound', 'index'], array());
 			}
 		}
 
@@ -177,7 +177,7 @@ class Legacy {
 	 */
 	public function markBenchmark($str)
 	{
-		$BM = load_class('Flame\Core\Benchmark\Benchmark', 'core');
+		$BM = load_class('Kodhe\Core\Benchmark\Benchmark', 'core');
 		$BM->mark($str);
 	}
 
@@ -256,16 +256,16 @@ class Legacy {
 		// to ditch it all very soon.
 
 		$ci_core = array(
-			'BM'	=>'Flame\Core\Benchmark\Benchmark',
-			'CFG'	=>'Flame\Core\Config\Config',
-			'UNI'	=>'Flame\Core\Utf8\Utf8',
-			'URI'	=>'Flame\Core\URI\URI',
-			'RTR'	=>'Flame\Core\Router\Router',
-			'OUT'	=>'Flame\Core\Output\Output',
-			'SEC'	=>'Flame\Core\Security\Security',
-			'IN'	=>'Flame\Core\Input\Input',
-			'LANG'	=>'Flame\Core\Lang\Lang',
-			'MOD'	=>'Flame\Core\Module\Module',
+			'BM'	=>'Kodhe\Core\Benchmark\Benchmark',
+			'CFG'	=>'Kodhe\Core\Config\Config',
+			'UNI'	=>'Kodhe\Core\Utf8\Utf8',
+			'URI'	=>'Kodhe\Core\URI\URI',
+			'RTR'	=>'Kodhe\Core\Router\Router',
+			'OUT'	=>'Kodhe\Core\Output\Output',
+			'SEC'	=>'Kodhe\Core\Security\Security',
+			'IN'	=>'Kodhe\Core\Input\Input',
+			'LANG'	=>'Kodhe\Core\Lang\Lang',
+			'MOD'	=>'Kodhe\Core\Module\Module',
 		);
 
 		foreach ($ci_core as $key => $class) {
@@ -319,24 +319,24 @@ class Legacy {
 	{
 
 		$ci_core = array(
-			'CI_Benchmark'	=>'Flame\Core\Benchmark\Benchmark',
-			'CI_Config'	=>'Flame\Core\Config\Config',
-			'CI_Utf8'	=>'Flame\Core\Utf8\Utf8',
-			'CI_URI'	=>'Flame\Core\URI\URI',
-			'CI_Router'	=>'Flame\Core\Router\Router',
-			'CI_Output'	=>'Flame\Core\Output\Output',
-			'CI_Security'	=>'Flame\Core\Security\Security',
-			'CI_Input'	=>'Flame\Core\Input\Input',
-			'CI_Lang'	=>'Flame\Core\Lang\Lang',
-			'CI_Model'	=>'Flame\Core\Model\Legacy',
-			'CI_Module'	=>'Flame\Core\Module\Module',
+			'CI_Benchmark'	=>'Kodhe\Core\Benchmark\Benchmark',
+			'CI_Config'	=>'Kodhe\Core\Config\Config',
+			'CI_Utf8'	=>'Kodhe\Core\Utf8\Utf8',
+			'CI_URI'	=>'Kodhe\Core\URI\URI',
+			'CI_Router'	=>'Kodhe\Core\Router\Router',
+			'CI_Output'	=>'Kodhe\Core\Output\Output',
+			'CI_Security'	=>'Kodhe\Core\Security\Security',
+			'CI_Input'	=>'Kodhe\Core\Input\Input',
+			'CI_Lang'	=>'Kodhe\Core\Lang\Lang',
+			'CI_Model'	=>'Kodhe\Core\Model\Legacy',
+			'CI_Module'	=>'Kodhe\Core\Module\Module',
 
-			'Model'	=>'Flame\Core\Model\Model',
+			'Model'	=>'Kodhe\Core\Model\Model',
 
 		);
 
-		if(class_exists('Flame\Core\Loader\Loader')) {
-			class_alias('Flame\Core\Loader\Loader', 'CI_Loader');
+		if(class_exists('Kodhe\Core\Loader\Loader')) {
+			class_alias('Kodhe\Core\Loader\Loader', 'CI_Loader');
 		}
 
 		foreach ($ci_core as $alias => $class) {
@@ -346,30 +346,30 @@ class Legacy {
 		}
 
 	$ci_libraries = array(
-		'CI_Calendar'=>'Flame\Libraries\Calendar\Calendar',
-		'CI_Cart'=>'Flame\Libraries\Cart\Cart',
-		'CI_Driver_Library'=>'Flame\Libraries\Driver\Library',
-		'CI_Driver'=>'Flame\Libraries\Driver\Driver\Driver',
-		'CI_Email'=>'Flame\Libraries\Email\Email',
-		'CI_Encrypt'=>'Flame\Libraries\Encrypt\Encrypt',
-		'CI_Encryption'=>'Flame\Libraries\Encryption\Encryption',
-		'CI_Form_validation'=>'Flame\Libraries\FormValidation\FormValidation',
-		'CI_Ftp'=>'Flame\Libraries\Ftp\Ftp',
-		'CI_Image_lib'=>'Flame\Libraries\Image_lib\Image_lib',
-		'CI_Javascript'=>'Flame\Libraries\Javascript\Javascript',
-		'CI_Log'=>'Flame\Libraries\Log\Log',
-		'CI_Migration'=>'Flame\Libraries\Migration\Migration',
-		'CI_Pagination'=>'Flame\Libraries\Pagination\Pagination',
-		'CI_Parser'=>'Flame\Libraries\Parser\Parser',
-		'CI_Profiler'=>'Flame\Libraries\Profiler\Profiler',
-		'CI_Table'=>'Flame\Libraries\Table\Table',
-		'CI_Trackback'=>'Flame\Libraries\Trackback\Trackback',
-		'CI_Typography'=>'Flame\Libraries\Typography\Typography',
-		'CI_Unit_test'=>'Flame\Libraries\UnitTest\UnitTest',
-		'CI_Upload'=>'Flame\Libraries\Upload\Upload',
-		'CI_User_agent'=>'Flame\Libraries\UserAgent\UserAgent',
-		'CI_Xmlrpc'=>'Flame\Libraries\Xmlrpc\Xmlrpc',
-		'CI_Zip'=>'Flame\Libraries\Zip\Zip',
+		'CI_Calendar'=>'Kodhe\Libraries\Calendar\Calendar',
+		'CI_Cart'=>'Kodhe\Libraries\Cart\Cart',
+		'CI_Driver_Library'=>'Kodhe\Libraries\Driver\Library',
+		'CI_Driver'=>'Kodhe\Libraries\Driver\Driver\Driver',
+		'CI_Email'=>'Kodhe\Libraries\Email\Email',
+		'CI_Encrypt'=>'Kodhe\Libraries\Encrypt\Encrypt',
+		'CI_Encryption'=>'Kodhe\Libraries\Encryption\Encryption',
+		'CI_Form_validation'=>'Kodhe\Libraries\FormValidation\FormValidation',
+		'CI_Ftp'=>'Kodhe\Libraries\Ftp\Ftp',
+		'CI_Image_lib'=>'Kodhe\Libraries\Image_lib\Image_lib',
+		'CI_Javascript'=>'Kodhe\Libraries\Javascript\Javascript',
+		'CI_Log'=>'Kodhe\Libraries\Log\Log',
+		'CI_Migration'=>'Kodhe\Libraries\Migration\Migration',
+		'CI_Pagination'=>'Kodhe\Libraries\Pagination\Pagination',
+		'CI_Parser'=>'Kodhe\Libraries\Parser\Parser',
+		'CI_Profiler'=>'Kodhe\Libraries\Profiler\Profiler',
+		'CI_Table'=>'Kodhe\Libraries\Table\Table',
+		'CI_Trackback'=>'Kodhe\Libraries\Trackback\Trackback',
+		'CI_Typography'=>'Kodhe\Libraries\Typography\Typography',
+		'CI_Unit_test'=>'Kodhe\Libraries\UnitTest\UnitTest',
+		'CI_Upload'=>'Kodhe\Libraries\Upload\Upload',
+		'CI_User_agent'=>'Kodhe\Libraries\UserAgent\UserAgent',
+		'CI_Xmlrpc'=>'Kodhe\Libraries\Xmlrpc\Xmlrpc',
+		'CI_Zip'=>'Kodhe\Libraries\Zip\Zip',
 	);
 
 	foreach ($ci_libraries as $alias => $class) {

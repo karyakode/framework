@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Migration;
+<?php namespace Kodhe\Libraries\Migration;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

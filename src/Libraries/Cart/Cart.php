@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Cart;
+<?php namespace Kodhe\Libraries\Cart;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

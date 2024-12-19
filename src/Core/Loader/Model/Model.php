@@ -1,10 +1,10 @@
 <?php
 
-namespace Flame\Core\Loader\Model;
+namespace Kodhe\Core\Loader\Model;
 
-use Flame\Core\Module\Module;
-use Flame\Core\Path\Paths;
-use Flame\Core\Dependency\DependencyResolver;
+use Kodhe\Core\Module\Module;
+use Kodhe\Core\Path\Paths;
+use Kodhe\Core\Dependency\DependencyResolver;
 
 class Model
 {

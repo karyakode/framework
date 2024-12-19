@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Module;
+<?php namespace Kodhe\Core\Module;
 
 interface ModuleInterface
 {

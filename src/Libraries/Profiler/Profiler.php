@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Profiler;
+<?php namespace Kodhe\Libraries\Profiler;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -180,7 +180,7 @@ class Profiler {
 			if (is_object($cobject))
 			{
 
-				if ($cobject instanceof \Flame\Database\DB)
+				if ($cobject instanceof \Kodhe\Database\DB)
 				{
 					$dbs[get_class($this->CI).':$'.$name] = $cobject;
 				}
@@ -188,7 +188,7 @@ class Profiler {
 				{
 					foreach (get_object_vars($cobject) as $mname => $mobject)
 					{
-						if ($mobject instanceof \Flame\Database\DB)
+						if ($mobject instanceof \Kodhe\Database\DB)
 						{
 							$dbs[get_class($cobject).':$'.$mname] = $mobject;
 						}

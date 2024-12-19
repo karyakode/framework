@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Pdo;
+<?php namespace Kodhe\Database\Driver\Drivers\Pdo;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link		https://codeigniter.com/database/
  */
 use PDO;
-class Forge extends \Flame\Database\Forge\Forge {
+class Forge extends \Kodhe\Database\Forge\Forge {
 
 	/**
 	 * CREATE TABLE IF statement

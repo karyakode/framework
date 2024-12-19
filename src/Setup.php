@@ -1,14 +1,14 @@
 <?php
-use \Flame\Core\Engine\Provider;
-use \Flame\Core\Loader\Library;
-use \Flame\Core\Loader\Helpers;
-use \Flame\Core\Loader\Models;
-use \Flame\Core\Config\Config;
-use \Flame\Core\Loader\Loader;
-use \Flame\Core\Path\Paths;
+use \Kodhe\Core\Engine\Provider;
+use \Kodhe\Core\Loader\Library;
+use \Kodhe\Core\Loader\Helpers;
+use \Kodhe\Core\Loader\Models;
+use \Kodhe\Core\Config\Config;
+use \Kodhe\Core\Loader\Loader;
+use \Kodhe\Core\Path\Paths;
 
 return [
-	'namespace' => 'Flame',
+	'namespace' => 'Kodhe',
 	'author' => 'Karya Kode',
 	'name' => 'Flame Framework',
 	'version' => '0.3.2.2.0',
@@ -138,20 +138,20 @@ return [
 		},
 		'Model/Datastore'=> function($provider){
       $app = $provider->make('App');
-      $config = new Flame\Core\Model\Configuration();
+      $config = new Kodhe\Core\Model\Configuration();
 			$config->setDefaultPrefix($provider->getPrefix());
 			$config->setModelAliases($app->getModels());
 			//$config->setEnabledPrefixes($installed_prefixes);
 			$config->setModelDependencies($app->forward('getModelDependencies'));
 
-      $DataStore =  new Flame\Core\Model\DataStore(new Flame\Database\Database(), $config);
+      $DataStore =  new Kodhe\Core\Model\DataStore(new Kodhe\Database\Database(), $config);
 
       return $DataStore;
     },
 
     'Model' => function($ee)
 		{
-      $facade = new Flame\Core\Model\Facade($ee->make('Model/Datastore'));
+      $facade = new Kodhe\Core\Model\Facade($ee->make('Model/Datastore'));
 
 			return $facade;
 		},

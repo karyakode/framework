@@ -1,6 +1,6 @@
 <?php
 
-namespace Flame\Core\Api\Http;
+namespace Kodhe\Core\Api\Http;
 
 /**
  * Request Component

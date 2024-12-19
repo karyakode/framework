@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Migration;
+<?php namespace Kodhe\Core\Migration;
 
 /**
  * Migration Interface.

@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Benchmark;
+<?php namespace Kodhe\Core\Benchmark;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 

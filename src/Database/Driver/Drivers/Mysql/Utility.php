@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Mysql;
+<?php namespace Kodhe\Database\Driver\Drivers\Mysql;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Utility extends \Flame\Database\Utility\Utility {
+class Utility extends \Kodhe\Database\Utility\Utility {
 
 	/**
 	 * List databases statement

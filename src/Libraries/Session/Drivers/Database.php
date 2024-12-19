@@ -1,6 +1,6 @@
-<?php namespace Flame\Libraries\Session\Drivers;
-use Flame\Libraries\Session\Driver;
-use Flame\Libraries\Session\HandlerInterface;
+<?php namespace Kodhe\Libraries\Session\Drivers;
+use Kodhe\Libraries\Session\Driver;
+use Kodhe\Libraries\Session\HandlerInterface;
 use Exception;
 /**
  * CodeIgniter Session Database Driver
@@ -51,7 +51,7 @@ class Database extends Driver implements HandlerInterface {
 		isset(flame()->db) OR flame()->load->database();
 		$this->_db = flame()->db;
 
-		if ( ! $this->_db instanceof \Flame\Database\Builder\Builder)
+		if ( ! $this->_db instanceof \Kodhe\Database\Builder\Builder)
 		{
 			throw new Exception('Query Builder not enabled for the configured database. Aborting.');
 		}

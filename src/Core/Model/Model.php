@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Model;
+<?php namespace Kodhe\Core\Model;
 
 use Exception;
 

@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\ImageLib;
+<?php namespace Kodhe\Libraries\ImageLib;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

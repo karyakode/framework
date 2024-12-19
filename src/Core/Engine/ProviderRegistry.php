@@ -1,6 +1,6 @@
-<?php namespace Flame\Core\Engine;
+<?php namespace Kodhe\Core\Engine;
 
-use Flame\Core\Dependency\InjectionBindingDecorator;
+use Kodhe\Core\Dependency\InjectionBindingDecorator;
 use FilesystemIterator;
 
 /**

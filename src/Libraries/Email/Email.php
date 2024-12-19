@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Email;
+<?php namespace Kodhe\Libraries\Email;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

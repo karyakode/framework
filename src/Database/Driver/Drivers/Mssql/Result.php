@@ -1,4 +1,4 @@
-<?php namespace Flame\Database\Driver\Drivers\Mssql;
+<?php namespace Kodhe\Database\Driver\Drivers\Mssql;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Result extends \Flame\Database\Result\Result {
+class Result extends \Kodhe\Database\Result\Result {
 
 	/**
 	 * Number of rows in the result set

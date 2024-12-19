@@ -1,5 +1,5 @@
 <?php
-namespace Flame\Core\Engine\Http;
+namespace Kodhe\Core\Engine\Http;
 
 /**
  * Core Request

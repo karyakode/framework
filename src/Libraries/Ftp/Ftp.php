@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Ftp;
+<?php namespace Kodhe\Libraries\Ftp;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

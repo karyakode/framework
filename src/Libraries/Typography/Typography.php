@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Typography;
+<?php namespace Kodhe\Libraries\Typography;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

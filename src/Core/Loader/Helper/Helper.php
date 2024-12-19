@@ -1,13 +1,13 @@
-<?php namespace Flame\Core\Loader\Helper;
+<?php namespace Kodhe\Core\Loader\Helper;
 
-use Flame\Core\Module\Module;
+use Kodhe\Core\Module\Module;
 
 class Helper {
 
 	public $_flame_helpers =	array();
 	protected $_flame_helper_paths;
 
-  public function __construct(\Flame\Core\Path\Paths $Paths)
+  public function __construct(\Kodhe\Core\Path\Paths $Paths)
 	{
 		$this->_flame_helper_paths = $Paths::$helperPaths;
 	}

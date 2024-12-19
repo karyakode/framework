@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Encrypt;
+<?php namespace Kodhe\Libraries\Encrypt;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

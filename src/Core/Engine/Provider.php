@@ -1,10 +1,10 @@
 <?php
-namespace Flame\Core\Engine;
+namespace Kodhe\Core\Engine;
 
 use Closure;
-use Flame\Library\Filesystem\Filesystem;
-use Flame\Core\Dependency\ServiceProvider;
-use Flame\Core\Dependency\InjectionBindingDecorator;
+use Kodhe\Library\Filesystem\Filesystem;
+use Kodhe\Core\Dependency\ServiceProvider;
+use Kodhe\Core\Dependency\InjectionBindingDecorator;
 
 /**
  * Core Provider

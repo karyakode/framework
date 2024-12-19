@@ -1,5 +1,5 @@
-<?php namespace Flame;
-use Flame\Core\Engine\BaseController;
+<?php namespace Kodhe;
+use Kodhe\Core\Engine\BaseController;
 class Controller extends BaseController
 {
 
@@ -22,8 +22,8 @@ class Controller extends BaseController
           return call_user_func_array([self::$facade, $method], $arguments);
       }
 
-      if (method_exists('Flame\Modules\NotFound\Controllers\NotFound', 'index')) {
-        return call_user_func_array(['Flame\Modules\NotFound\Controllers\NotFound', 'index'], $arguments);
+      if (method_exists('Kodhe\Modules\NotFound\Controllers\NotFound', 'index')) {
+        return call_user_func_array(['Kodhe\Modules\NotFound\Controllers\NotFound', 'index'], $arguments);
       }
   }
 

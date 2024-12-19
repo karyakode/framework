@@ -1,15 +1,15 @@
-<?php namespace Flame\Core\Loader\View;
+<?php namespace Kodhe\Core\Loader\View;
 
-use Flame\Core\Module\Module;
+use Kodhe\Core\Module\Module;
 
-class View extends \Flame\Core\Engine\BaseController {
+class View extends \Kodhe\Core\Engine\BaseController {
 
 	protected $_flame_ob_level;
 	protected $_flame_view_paths;
 	protected $_flame_cached_vars =	array();
 
 
-	public function __construct(\Flame\Core\Path\Paths $Paths){
+	public function __construct(\Kodhe\Core\Path\Paths $Paths){
 		$this->_flame_ob_level = ob_get_level();
 		$this->_flame_view_paths = $Paths::$viewPaths;
 		log_message('info', 'View Class Initialized');

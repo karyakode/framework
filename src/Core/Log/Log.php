@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Log;
+<?php namespace Kodhe\Core\Log;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Log {

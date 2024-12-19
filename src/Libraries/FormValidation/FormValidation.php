@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\FormValidation;
+<?php namespace Kodhe\Libraries\FormValidation;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

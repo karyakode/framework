@@ -1,4 +1,4 @@
-<?php namespace Flame\Core\Dependency;
+<?php namespace Kodhe\Core\Dependency;
 
 use Closure;
 use Exception;

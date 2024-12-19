@@ -1,4 +1,4 @@
-<?php namespace Flame\Libraries\Pagination;
+<?php namespace Kodhe\Libraries\Pagination;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

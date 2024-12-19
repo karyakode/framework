@@ -1,6 +1,6 @@
-<?php namespace Flame\Libraries\Cache\Drivers;
+<?php namespace Kodhe\Libraries\Cache\Drivers;
 defined('BASEPATH') OR exit('No direct script access allowed');
-use Flame\Libraries\Driver\Driver as Driver;
+use Kodhe\Libraries\Driver\Driver as Driver;
 /**
  * CodeIgniter Memcached Caching Class
  *

@@ -1,7 +1,7 @@
 <?php
-namespace Flame\Core\Dependency;
+namespace Kodhe\Core\Dependency;
 
-use Flame\Core\Contracts\DependencyResolverInterface;
+use Kodhe\Core\Contracts\DependencyResolverInterface;
 use ReflectionClass;
 use ReflectionNamedType;
 use ReflectionParameter;
