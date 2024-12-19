@@ -1,0 +1,43 @@
+{
+    "description": "The Kodhe framework",
+    "name": "karyakode/framework",
+    "type": "project",
+    "homepage": "https://github.com/rohmadkadarwanto/kodhe",
+    "license": "MIT",
+    "support": {
+        "forum": "https://github.com/rohmadkadarwanto/kodhe/issues",
+        "wiki": "https://github.com/rohmadkadarwanto/kodhe/wiki",
+        "slack": "https://kodhechat.slack.com",
+        "source": "https://github.com/rohmadkadarwanto/kodhe"
+    },
+    "require": {
+        "php": ">=7.4",
+        "paragonie/random_compat": "^9.99"
+    },
+    "suggest": {
+        "paragonie/random_compat": "Provides better randomness in PHP 5.x"
+    },
+    "scripts": {
+        "test:coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --color=always --coverage-text --configuration tests/travis/sqlite.phpunit.xml"
+        ],
+        "post-install-cmd": [
+            "sed -i s/name{0}/name[0]/ vendor/mikey179/vfsstream/src/main/php/org/bovigo/vfs/vfsStream.php"
+        ],
+        "post-update-cmd": [
+            "sed -i s/name{0}/name[0]/ vendor/mikey179/vfsstream/src/main/php/org/bovigo/vfs/vfsStream.php"
+        ]
+    },
+    "require-dev": {
+        "mikey179/vfsstream": "1.6.*",
+        "phpunit/phpunit": "9.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flame\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
