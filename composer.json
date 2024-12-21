@@ -38,7 +38,8 @@
         "src/Common.php"
       ],
       "psr-4": {
-        "Kodhe\\Pulen\\": "src/"
+        "Kodhe\\Pulen\\": "src/",
+        "Kodhe\\Pulen\\": "pulen/"
       }
     },
     "minimum-stability": "dev",
