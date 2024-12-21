@@ -308,7 +308,7 @@ class Legacy {
 			}
 
 			if(class_exists($name)) {
-				kodhe()->set(strtolower($objectname), new $name);
+				$GLOBALS['kodhe']->set(strtolower($objectname), new $name);
 			}
 		}
 
