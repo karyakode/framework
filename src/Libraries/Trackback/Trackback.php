@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\Trackback;
+<?php namespace Kodhe\Pulen\Libraries\Trackback;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

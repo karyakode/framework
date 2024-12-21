@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\FormValidation;
+<?php namespace Kodhe\Pulen\Libraries\FormValidation;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

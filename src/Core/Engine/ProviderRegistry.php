@@ -1,6 +1,6 @@
-<?php namespace Kodhe\Core\Engine;
+<?php namespace Kodhe\Pulen\Core\Engine;
 
-use Kodhe\Core\Dependency\InjectionBindingDecorator;
+use Kodhe\Pulen\Core\Dependency\InjectionBindingDecorator;
 use FilesystemIterator;
 
 /**

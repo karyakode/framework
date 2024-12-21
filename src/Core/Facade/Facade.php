@@ -1,5 +1,5 @@
 <?php
-namespace Kodhe\Core\Facade;
+namespace Kodhe\Pulen\Core\Facade;
 
 use InvalidArgumentException;
 use RuntimeException;

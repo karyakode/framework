@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Dependency;
+<?php namespace Kodhe\Pulen\Core\Dependency;
 
 use Closure;
 

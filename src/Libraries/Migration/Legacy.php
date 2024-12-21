@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\Migration;
+<?php namespace Kodhe\Pulen\Libraries\Migration;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

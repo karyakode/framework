@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\Pagination;
+<?php namespace Kodhe\Pulen\Libraries\Pagination;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

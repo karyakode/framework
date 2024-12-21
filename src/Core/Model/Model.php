@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Model;
+<?php namespace Kodhe\Pulen\Core\Model;
 
 use Exception;
 

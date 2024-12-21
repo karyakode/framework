@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Model;
+<?php namespace Kodhe\Pulen\Core\Model;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Legacy {

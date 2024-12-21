@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Config;
+<?php namespace Kodhe\Pulen\Core\Config;
 
 interface ConfigInterface
 {

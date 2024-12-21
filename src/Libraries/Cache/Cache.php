@@ -1,6 +1,6 @@
-<?php namespace Kodhe\Libraries\Cache;
+<?php namespace Kodhe\Pulen\Libraries\Cache;
 defined('BASEPATH') OR exit('No direct script access allowed');
-use Kodhe\Libraries\Driver\Library as DriverLibrary;
+use Kodhe\Pulen\Libraries\Driver\Library as DriverLibrary;
 /**
  * CodeIgniter Caching Class
  *

@@ -1,6 +1,6 @@
-<?php namespace Kodhe\Database;
+<?php namespace Kodhe\Pulen\Database;
 
-class DB extends \Kodhe\Database\Builder\Builder { }
+class DB extends \Kodhe\Pulen\Database\Builder\Builder { }
 
 class Database
 {
@@ -125,13 +125,13 @@ class Database
 
   private static function load_driver($params){
 
-		$driver = 'Kodhe\Database\Driver\Drivers\\'.ucwords($params['dbdriver']).'\Driver';
+		$driver = 'Kodhe\Pulen\Database\Driver\Drivers\\'.ucwords($params['dbdriver']).'\Driver';
   	$DB = new $driver($params);
 
   	// Check for a subdriver
   	if ( ! empty($DB->subdriver))
   	{
-			$driver = 'Kodhe\Database\Driver\Drivers\\'.ucwords($params['dbdriver']).'\Subdrivers\\'.ucwords($DB->subdriver).'\Driver';
+			$driver = 'Kodhe\Pulen\Database\Driver\Drivers\\'.ucwords($params['dbdriver']).'\Subdrivers\\'.ucwords($DB->subdriver).'\Driver';
 
 			$DB = new $driver($params);
   	}

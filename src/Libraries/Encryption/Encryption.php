@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\Encryption;
+<?php namespace Kodhe\Pulen\Libraries\Encryption;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

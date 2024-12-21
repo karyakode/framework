@@ -1,6 +1,6 @@
-<?php namespace Kodhe\Core\Module;
+<?php namespace Kodhe\Pulen\Core\Module;
 
-use Kodhe\Core\Router\Router;
+use Kodhe\Pulen\Core\Router\Router;
 
 class Module implements ModuleInterface
 {

@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Oci8;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Oci8;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Result extends \Kodhe\Database\Result\Result {
+class Result extends \Kodhe\Pulen\Database\Result\Result {
 
 	/**
 	 * Statement ID

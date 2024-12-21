@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\Ftp;
+<?php namespace Kodhe\Pulen\Libraries\Ftp;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

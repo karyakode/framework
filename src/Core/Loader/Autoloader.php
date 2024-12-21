@@ -1,7 +1,7 @@
-<?php namespace Kodhe\Core\Loader;
+<?php namespace Kodhe\Pulen\Core\Loader;
 
-use Kodhe\Core\Module\Module;
-use Kodhe\Core\Path\Paths;
+use Kodhe\Pulen\Core\Module\Module;
+use Kodhe\Pulen\Core\Path\Paths;
 
 class Autoloader
 {

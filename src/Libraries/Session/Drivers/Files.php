@@ -1,7 +1,7 @@
-<?php namespace Kodhe\Libraries\Session\Drivers;
+<?php namespace Kodhe\Pulen\Libraries\Session\Drivers;
 defined('BASEPATH') OR exit('No direct script access allowed');
-use Kodhe\Libraries\Session\Driver;
-use Kodhe\Libraries\Session\HandlerInterface;
+use Kodhe\Pulen\Libraries\Session\Driver;
+use Kodhe\Pulen\Libraries\Session\HandlerInterface;
 
 /**
  * CodeIgniter Session Files Driver

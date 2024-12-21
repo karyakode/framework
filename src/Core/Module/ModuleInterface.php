@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Module;
+<?php namespace Kodhe\Pulen\Core\Module;
 
 interface ModuleInterface
 {

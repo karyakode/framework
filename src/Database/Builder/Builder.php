@@ -1,7 +1,7 @@
-<?php namespace Kodhe\Database\Builder;
+<?php namespace Kodhe\Pulen\Database\Builder;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Kodhe\Database\Driver\Driver;
+use Kodhe\Pulen\Database\Driver\Driver;
 
 abstract class Builder extends Driver {
 

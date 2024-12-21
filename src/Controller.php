@@ -1,5 +1,5 @@
-<?php namespace Kodhe;
-use Kodhe\Core\Engine\BaseController;
+<?php namespace Kodhe\Pulen;
+use Kodhe\Pulen\Core\Engine\BaseController;
 class Controller extends BaseController
 {
 
@@ -24,8 +24,8 @@ class Controller extends BaseController
           return call_user_func_array([self::$facade, $method], $arguments);
       }
 
-      if (method_exists('Kodhe\Modules\NotFound\Controllers\NotFound', 'index')) {
-        return call_user_func_array(['Kodhe\Modules\NotFound\Controllers\NotFound', 'index'], $arguments);
+      if (method_exists('Kodhe\Pulen\Modules\NotFound\Controllers\NotFound', 'index')) {
+        return call_user_func_array(['Kodhe\Pulen\Modules\NotFound\Controllers\NotFound', 'index'], $arguments);
       }
   }
 

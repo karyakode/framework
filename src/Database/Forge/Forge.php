@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Forge;
+<?php namespace Kodhe\Pulen\Database\Forge;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 abstract class Forge {

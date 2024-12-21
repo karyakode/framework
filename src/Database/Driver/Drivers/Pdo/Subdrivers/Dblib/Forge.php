@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Pdo\Subdrivers\Dblib;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Pdo\Subdrivers\Dblib;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Forge extends \Kodhe\Database\Driver\Drivers\Pdo\Forge {
+class Forge extends \Kodhe\Pulen\Database\Driver\Drivers\Pdo\Forge {
 
 	/**
 	 * CREATE TABLE IF statement

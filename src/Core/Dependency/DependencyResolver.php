@@ -1,7 +1,7 @@
 <?php
-namespace Kodhe\Core\Dependency;
+namespace Kodhe\Pulen\Core\Dependency;
 
-use Kodhe\Core\Contracts\DependencyResolverInterface;
+use Kodhe\Pulen\Core\Contracts\DependencyResolverInterface;
 use ReflectionClass;
 use ReflectionNamedType;
 use ReflectionParameter;

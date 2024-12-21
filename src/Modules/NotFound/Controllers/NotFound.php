@@ -1,5 +1,5 @@
-<?php namespace Kodhe\Modules\NotFound\Controllers;
-use Kodhe\Controller;
+<?php namespace Kodhe\Pulen\Modules\NotFound\Controllers;
+use Kodhe\Pulen\Controller;
 class NotFound extends Controller {
 
 	public static function index()

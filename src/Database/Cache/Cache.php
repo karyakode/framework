@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Cache;
+<?php namespace Kodhe\Pulen\Database\Cache;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cache {

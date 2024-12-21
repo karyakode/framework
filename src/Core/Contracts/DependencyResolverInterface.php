@@ -1,5 +1,5 @@
 <?php
-namespace Kodhe\Core\Contracts;
+namespace Kodhe\Pulen\Core\Contracts;
 
 interface DependencyResolverInterface
 {

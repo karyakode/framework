@@ -1,10 +1,10 @@
 <?php
 
-namespace Kodhe\Core\Loader\Library;
+namespace Kodhe\Pulen\Core\Loader\Library;
 
-use Kodhe\Core\Module\Module;
-use Kodhe\Core\Path\Paths;
-use Kodhe\Core\Dependency\DependencyResolver;
+use Kodhe\Pulen\Core\Module\Module;
+use Kodhe\Pulen\Core\Path\Paths;
+use Kodhe\Pulen\Core\Dependency\DependencyResolver;
 class Library
 {
     private array $kodheClasses = [];

@@ -1,6 +1,6 @@
-<?php namespace Kodhe\Core\Loader\Plugin;
+<?php namespace Kodhe\Pulen\Core\Loader\Plugin;
 
-use Kodhe\Core\Module\Module;
+use Kodhe\Pulen\Core\Module\Module;
 
 class Plugin
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Kodhe\Core\Loader\Model;
+namespace Kodhe\Pulen\Core\Loader\Model;
 
-use Kodhe\Core\Module\Module;
-use Kodhe\Core\Path\Paths;
-use Kodhe\Core\Dependency\DependencyResolver;
+use Kodhe\Pulen\Core\Module\Module;
+use Kodhe\Pulen\Core\Path\Paths;
+use Kodhe\Pulen\Core\Dependency\DependencyResolver;
 
 class Model
 {

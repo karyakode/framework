@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Exceptions;
+<?php namespace Kodhe\Pulen\Core\Exceptions;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 

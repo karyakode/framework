@@ -1,6 +1,6 @@
-<?php namespace Kodhe\Libraries\Session\Drivers;
-use Kodhe\Libraries\Session\Driver;
-use Kodhe\Libraries\Session\HandlerInterface;
+<?php namespace Kodhe\Pulen\Libraries\Session\Drivers;
+use Kodhe\Pulen\Libraries\Session\Driver;
+use Kodhe\Pulen\Libraries\Session\HandlerInterface;
 use Exception;
 /**
  * CodeIgniter Session Database Driver
@@ -51,7 +51,7 @@ class Database extends Driver implements HandlerInterface {
 		isset(kodhe()->db) OR kodhe()->load->database();
 		$this->_db = kodhe()->db;
 
-		if ( ! $this->_db instanceof \Kodhe\Database\Builder\Builder)
+		if ( ! $this->_db instanceof \Kodhe\Pulen\Database\Builder\Builder)
 		{
 			throw new Exception('Query Builder not enabled for the configured database. Aborting.');
 		}

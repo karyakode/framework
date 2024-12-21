@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Pdo;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Pdo;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link		https://codeigniter.com/user_guide/database/
  */
  use PDO;
-class Driver extends \Kodhe\Database\DB {
+class Driver extends \Kodhe\Pulen\Database\DB {
 
 	/**
 	 * Database driver

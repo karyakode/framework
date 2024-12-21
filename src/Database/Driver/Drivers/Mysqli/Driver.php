@@ -1,7 +1,7 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Mysqli;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Mysqli;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Driver extends \Kodhe\Database\DB {
+class Driver extends \Kodhe\Pulen\Database\DB {
 
 	public $dbdriver = 'mysqli';
 	public $compress = FALSE;

@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Input;
+<?php namespace Kodhe\Pulen\Core\Input;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Input {
@@ -29,12 +29,12 @@ class Input {
 		$this->_enable_csrf		= (config_item('csrf_protection') === TRUE);
 		$this->_standardize_newlines	= (bool) config_item('standardize_newlines');
 
-		$this->security =& load_class('Kodhe\Core\Security\Security');
+		$this->security =& load_class('Kodhe\Pulen\Core\Security\Security');
 
 		// Do we need the UTF-8 class?
 		if (UTF8_ENABLED === TRUE)
 		{
-			$this->uni =& load_class('Kodhe\Core\Utf8\Utf8');
+			$this->uni =& load_class('Kodhe\Pulen\Core\Utf8\Utf8');
 		}
 
 		// Sanitize global arrays

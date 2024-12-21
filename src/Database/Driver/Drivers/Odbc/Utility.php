@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Odbc;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Odbc;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/database/
  */
-class Utility extends \Kodhe\Database\Utility\Utility {
+class Utility extends \Kodhe\Pulen\Database\Utility\Utility {
 
 	/**
 	 * Export

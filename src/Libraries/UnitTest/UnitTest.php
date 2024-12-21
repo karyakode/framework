@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\UnitTest;
+<?php namespace Kodhe\Pulen\Libraries\UnitTest;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

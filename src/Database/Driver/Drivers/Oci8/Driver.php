@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Oci8;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Oci8;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @author	  Kelly McArdle
  */
-class Driver extends \Kodhe\Database\DB {
+class Driver extends \Kodhe\Pulen\Database\DB {
 
 	/**
 	 * Database driver

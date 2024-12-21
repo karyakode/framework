@@ -1,7 +1,7 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Mysqli;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Mysqli;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Result extends \Kodhe\Database\Result\Result {
+class Result extends \Kodhe\Pulen\Database\Result\Result {
 
 	public function num_rows()
 	{

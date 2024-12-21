@@ -1,5 +1,5 @@
-<?php namespace Kodhe\Libraries\Core;
-use Kodhe\Service\Module\Module;
+<?php namespace Kodhe\Pulen\Libraries\Core;
+use Kodhe\Pulen\Service\Module\Module;
 
 class Core
 {

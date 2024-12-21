@@ -1,14 +1,14 @@
 <?php
-use \Kodhe\Core\Engine\Provider;
-use \Kodhe\Core\Loader\Library;
-use \Kodhe\Core\Loader\Helpers;
-use \Kodhe\Core\Loader\Models;
-use \Kodhe\Core\Config\Config;
-use \Kodhe\Core\Loader\Loader;
-use \Kodhe\Core\Path\Paths;
+use \Kodhe\Pulen\Core\Engine\Provider;
+use \Kodhe\Pulen\Core\Loader\Library;
+use \Kodhe\Pulen\Core\Loader\Helpers;
+use \Kodhe\Pulen\Core\Loader\Models;
+use \Kodhe\Pulen\Core\Config\Config;
+use \Kodhe\Pulen\Core\Loader\Loader;
+use \Kodhe\Pulen\Core\Path\Paths;
 
 return [
-	'namespace' => 'Kodhe',
+	'namespace' => 'Kodhe\Pulen',
 	'author' => 'Karya Kode',
 	'name' => 'Kodhe Framework',
 	'version' => '0.3.2.2.0',
@@ -138,20 +138,20 @@ return [
 		},
 		'Model/Datastore'=> function($provider){
       $app = $provider->make('App');
-      $config = new Kodhe\Core\Model\Configuration();
+      $config = new Kodhe\Pulen\Core\Model\Configuration();
 			$config->setDefaultPrefix($provider->getPrefix());
 			$config->setModelAliases($app->getModels());
 			//$config->setEnabledPrefixes($installed_prefixes);
 			$config->setModelDependencies($app->forward('getModelDependencies'));
 
-      $DataStore =  new Kodhe\Core\Model\DataStore(new Kodhe\Database\Database(), $config);
+      $DataStore =  new Kodhe\Pulen\Core\Model\DataStore(new Kodhe\Pulen\Database\Database(), $config);
 
       return $DataStore;
     },
 
     'Model' => function($ee)
 		{
-      $facade = new Kodhe\Core\Model\Facade($ee->make('Model/Datastore'));
+      $facade = new Kodhe\Pulen\Core\Model\Facade($ee->make('Model/Datastore'));
 
 			return $facade;
 		},

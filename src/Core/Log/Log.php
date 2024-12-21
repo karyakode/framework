@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Log;
+<?php namespace Kodhe\Pulen\Core\Log;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Log {

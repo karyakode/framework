@@ -1,12 +1,12 @@
 <?php
-namespace Kodhe\Core\Engine;
+namespace Kodhe\Pulen\Core\Engine;
 
-use Kodhe\Core\Dependency\InjectionContainer;
-use Kodhe\Error\FileNotFound;
-use Kodhe\Core\Legacy\Legacy;
-use Kodhe\Core\Engine\Http\Request;
-use Kodhe\Core\Engine\Http\Response;
-use Kodhe\Core\Contracts\DependencyResolverInterface;
+use Kodhe\Pulen\Core\Dependency\InjectionContainer;
+use Kodhe\Pulen\Error\FileNotFound;
+use Kodhe\Pulen\Core\Legacy\Legacy;
+use Kodhe\Pulen\Core\Engine\Http\Request;
+use Kodhe\Pulen\Core\Engine\Http\Response;
+use Kodhe\Pulen\Core\Contracts\DependencyResolverInterface;
 /**
  * Core Abstract
  */
@@ -226,7 +226,7 @@ class Framework {
 		);
 
 		// This allows for routes of 'cp/channels/layout/1' to end up calling
-		// \Kodhe\Controller\Channels\Layout::layout(1)
+		// \Kodhe\Pulen\Controller\Channels\Layout::layout(1)
 		if ( ! in_array($method, $controller_methods)
 			&& in_array($RTR->fetch_class(), $controller_methods))
 		{
@@ -259,7 +259,7 @@ class Framework {
 
 		try
 		{
-			//$resolve =  new \Kodhe\Core\Dependency\DependencyResolver();
+			//$resolve =  new \Kodhe\Pulen\Core\Dependency\DependencyResolver();
 			//$controller = new $class;
 			$controller = $this->resolve->resolve($class, $params, false);
 
@@ -338,7 +338,7 @@ class Framework {
 			$qs = '&'.http_build_query($get);
 		}
 
-		$class = 'Kodhe\Modules\NotFound\Controllers\NotFound';
+		$class = 'Kodhe\Pulen\Modules\NotFound\Controllers\NotFound';
 		$method = 'index';
 		$RTR = $GLOBALS['RTR'];
 		if (isset($RTR->routes['404_override']) AND $RTR->routes['404_override']) {
@@ -397,8 +397,8 @@ class Framework {
 		$appProvider->setConfigPath($this->getConfigPath());
 
 		// Modules Provider
-    if(is_array(\Kodhe\Core\Module\Module::$locations)) {
-      foreach (\Kodhe\Core\Module\Module::$locations as $location => $offset) {
+    if(is_array(\Kodhe\Pulen\Core\Module\Module::$locations)) {
+      foreach (\Kodhe\Pulen\Core\Module\Module::$locations as $location => $offset) {
         if(is_dir($location)) {
 
 					$folders = new \FilesystemIterator($location, \FilesystemIterator::UNIX_PATHS);
@@ -495,7 +495,7 @@ class Framework {
 	protected function callHook($hook)
 	{
 			if (function_exists('load_class')) {
-					$hooks =& load_class('Kodhe\Core\Hooks\Hooks', 'core');
+					$hooks =& load_class('Kodhe\Pulen\Core\Hooks\Hooks', 'core');
 					if ($hooks->call_hook($hook) === false) {
 							log_message('debug', "Hook '$hook' tidak ditemukan atau tidak aktif.");
 					}

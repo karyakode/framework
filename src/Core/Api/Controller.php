@@ -1,8 +1,8 @@
 <?php
-namespace Kodhe\Core\Api;
+namespace Kodhe\Pulen\Core\Api;
 
-use Kodhe\Core\Api\Http\Request;
-use Kodhe\Core\Api\Http\Response;
+use Kodhe\Pulen\Core\Api\Http\Request;
+use Kodhe\Pulen\Core\Api\Http\Response;
 
 /**
  * RESTful API Controller
@@ -24,7 +24,7 @@ use Kodhe\Core\Api\Http\Response;
  * $route['resource_name/(:num)'] = '[Controller]/route/$1';
  * ```
  */
-class Controller extends \Kodhe\Controller
+class Controller extends \Kodhe\Pulen\Controller
 {
     /**
      * RESTful API resource routes

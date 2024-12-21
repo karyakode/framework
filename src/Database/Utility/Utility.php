@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Utility;
+<?php namespace Kodhe\Pulen\Database\Utility;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

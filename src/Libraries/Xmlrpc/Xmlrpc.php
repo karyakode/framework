@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\Xmlrpc;
+<?php namespace Kodhe\Pulen\Libraries\Xmlrpc;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 if ( ! function_exists('xml_parser_create'))

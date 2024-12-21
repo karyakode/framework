@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Mysql;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Mysql;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class Forge extends \Kodhe\Database\Forge\Forge {
+class Forge extends \Kodhe\Pulen\Database\Forge\Forge {
 
 	/**
 	 * CREATE DATABASE statement

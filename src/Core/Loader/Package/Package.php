@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Loader\Package;
+<?php namespace Kodhe\Pulen\Core\Loader\Package;
 
 class Package
 {
@@ -9,7 +9,7 @@ class Package
   protected $_kodhe_helper_paths;
 
 
-  function __construct(\Kodhe\Core\Path\Paths $Paths)
+  function __construct(\Kodhe\Pulen\Core\Path\Paths $Paths)
   {
 
     $this->_kodhe_view_paths = $Paths::$viewPaths;

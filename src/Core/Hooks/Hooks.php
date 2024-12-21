@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Hooks;
+<?php namespace Kodhe\Pulen\Core\Hooks;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -15,7 +15,7 @@ class Hooks {
 	public function __construct()
 	{
 
-		$CFG =& load_class('Kodhe\Core\Config\Config','core');
+		$CFG =& load_class('Kodhe\Pulen\Core\Config\Config','core');
 		log_message('info', 'Hooks Class Initialized');
 
 		if ($CFG->item('enable_hooks') === FALSE)

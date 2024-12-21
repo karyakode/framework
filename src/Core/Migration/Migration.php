@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Migration;
+<?php namespace Kodhe\Pulen\Core\Migration;
 
 /**
  * Migration Interface.

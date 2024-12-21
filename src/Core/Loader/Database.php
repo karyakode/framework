@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Loader;
+<?php namespace Kodhe\Pulen\Core\Loader;
 
 
 class Database
@@ -14,25 +14,25 @@ class Database
 
   		if ($return === TRUE)
   		{
-  			return \Kodhe\Database\Database::DB($params, $query_builder);
+  			return \Kodhe\Pulen\Database\Database::DB($params, $query_builder);
   		}
 
       if(kodhe()->has('db')) return;
   		// Load the DB class
-  		kodhe()->set('db', \Kodhe\Database\Database::DB($params, $query_builder));
+  		kodhe()->set('db', \Kodhe\Pulen\Database\Database::DB($params, $query_builder));
 
   	}
 
   	public static function dbutil($db = NULL, $return = FALSE)
   	{
 
-  		if ( ! is_object($db) OR ! ($db instanceof \Kodhe\Database\DB))
+  		if ( ! is_object($db) OR ! ($db instanceof \Kodhe\Pulen\Database\DB))
   		{
-  			class_exists('Kodhe\Database\DB', FALSE) OR self::database();
+  			class_exists('Kodhe\Pulen\Database\DB', FALSE) OR self::database();
   			$db =& kodhe()->db;
   		}
 
-      $class = 'Kodhe\Database\Driver\Drivers\\'.ucwords($this->dbdriver).'\Utility';
+      $class = 'Kodhe\Pulen\Database\Driver\Drivers\\'.ucwords($this->dbdriver).'\Utility';
 
   		if ($return === TRUE)
   		{
@@ -46,19 +46,19 @@ class Database
 
   	public static function dbforge($db = NULL, $return = FALSE)
   	{
-  		if ( ! is_object($db) OR ! ($db instanceof \Kodhe\Database\DB))
+  		if ( ! is_object($db) OR ! ($db instanceof \Kodhe\Pulen\Database\DB))
   		{
-  			class_exists('Kodhe\Database\DB', FALSE) OR self::database();
+  			class_exists('Kodhe\Pulen\Database\DB', FALSE) OR self::database();
   			$db =& kodhe()->db;
   		}
 
   		if ( ! empty($db->subdriver))
   		{
-        $class = 'Kodhe\Database\Driver\Drivers\\'.ucwords($db->dbdriver).'\Subdrivers\\'.ucwords($db->subdriver).'\Forge';
+        $class = 'Kodhe\Pulen\Database\Driver\Drivers\\'.ucwords($db->dbdriver).'\Subdrivers\\'.ucwords($db->subdriver).'\Forge';
   		}
   		else
   		{
-        $class = 'Kodhe\Database\Driver\Drivers\\'.ucwords($db->dbdriver).'\Forge';
+        $class = 'Kodhe\Pulen\Database\Driver\Drivers\\'.ucwords($db->dbdriver).'\Forge';
   		}
 
   		if ($return === TRUE)

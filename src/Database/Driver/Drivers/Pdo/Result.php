@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Pdo;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Pdo;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link		https://codeigniter.com/user_guide/database/
  */
 use PDO;
-class Result extends \Kodhe\Database\Result\Result {
+class Result extends \Kodhe\Pulen\Database\Result\Result {
 
 	/**
 	 * Number of rows in the result set

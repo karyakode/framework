@@ -1,15 +1,15 @@
-<?php namespace Kodhe\Core\Loader\View;
+<?php namespace Kodhe\Pulen\Core\Loader\View;
 
-use Kodhe\Core\Module\Module;
+use Kodhe\Pulen\Core\Module\Module;
 
-class View extends \Kodhe\Core\Engine\BaseController {
+class View extends \Kodhe\Pulen\Core\Engine\BaseController {
 
 	protected $_kodhe_ob_level;
 	protected $_kodhe_view_paths;
 	protected $_kodhe_cached_vars =	array();
 
 
-	public function __construct(\Kodhe\Core\Path\Paths $Paths){
+	public function __construct(\Kodhe\Pulen\Core\Path\Paths $Paths){
 		$this->_kodhe_ob_level = ob_get_level();
 		$this->_kodhe_view_paths = $Paths::$viewPaths;
 		log_message('info', 'View Class Initialized');

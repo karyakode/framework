@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\Session;
+<?php namespace Kodhe\Pulen\Libraries\Session;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -69,7 +69,7 @@ class Session {
 		$this->_config['_sid_regexp'] = $this->_sid_regexp;
 
 		$class = new $class($this->_config);
-		if ($class instanceof \Kodhe\Libraries\Session\HandlerInterface)
+		if ($class instanceof \Kodhe\Pulen\Libraries\Session\HandlerInterface)
 		{
 			if (is_php('5.4'))
 			{
@@ -157,9 +157,9 @@ class Session {
 	 protected function _ci_load_classes($driver)
  	{
  		// PHP 5.4 compatibility
- 		//interface_exists('Kodhe\Libraries\Session\HandlerInterface', FALSE) OR require_once(BASEPATH.'Libraries/Session/HandlerInterface.php');
+ 		//interface_exists('Kodhe\Pulen\Libraries\Session\HandlerInterface', FALSE) OR require_once(BASEPATH.'Libraries/Session/HandlerInterface.php');
 
- 		$class = 'Kodhe\Libraries\Session\Drivers\\'.ucwords($driver);
+ 		$class = 'Kodhe\Pulen\Libraries\Session\Drivers\\'.ucwords($driver);
 
 		if(class_exists($class)) {
 

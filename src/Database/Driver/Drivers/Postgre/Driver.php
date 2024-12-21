@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Postgre;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Postgre;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

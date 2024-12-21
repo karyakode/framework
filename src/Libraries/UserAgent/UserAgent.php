@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Libraries\UserAgent;
+<?php namespace Kodhe\Pulen\Libraries\UserAgent;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**

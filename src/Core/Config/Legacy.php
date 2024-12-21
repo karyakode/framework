@@ -1,7 +1,7 @@
-<?php namespace Kodhe\Core\Config;
+<?php namespace Kodhe\Pulen\Core\Config;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Kodhe\Core\Module\Module;
+use Kodhe\Pulen\Core\Module\Module;
 
 class Legacy {
 

@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Sqlite3;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Sqlite3;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author	Andrey Andreev
  * @link	https://codeigniter.com/user_guide/database/
  */
-class Forge extends \Kodhe\Database\Forge\Forge {
+class Forge extends \Kodhe\Pulen\Database\Forge\Forge {
 
 	/**
 	 * UNSIGNED support

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodhe\Core\Api\Http;
+namespace Kodhe\Pulen\Core\Api\Http;
 
 use Exception;
 

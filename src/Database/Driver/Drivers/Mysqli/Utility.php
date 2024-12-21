@@ -1,7 +1,7 @@
-<?php namespace Kodhe\Database\Driver\Drivers\Mysqli;
+<?php namespace Kodhe\Pulen\Database\Driver\Drivers\Mysqli;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Utility extends \Kodhe\Database\Utility\Utility {
+class Utility extends \Kodhe\Pulen\Database\Utility\Utility {
 
 	protected $_list_databases	= 'SHOW DATABASES';
 	protected $_optimize_table	= 'OPTIMIZE TABLE %s';

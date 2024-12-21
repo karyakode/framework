@@ -1,6 +1,6 @@
-<?php namespace Kodhe\Core\Router; defined('BASEPATH') OR exit('No direct script access allowed');
+<?php namespace Kodhe\Pulen\Core\Router; defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Kodhe\Core\Module\Module;
+use Kodhe\Pulen\Core\Module\Module;
 
 class Router extends Legacy
 {

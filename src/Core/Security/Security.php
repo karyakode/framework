@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Security;
+<?php namespace Kodhe\Pulen\Core\Security;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Security {
@@ -89,7 +89,7 @@ class Security {
 
 		if ($exclude_uris = config_item('csrf_exclude_uris'))
 		{
-			$uri = load_class('Kodhe\Core\URI\URI');
+			$uri = load_class('Kodhe\Pulen\Core\URI\URI');
 
 			foreach ($exclude_uris as $excluded)
 			{

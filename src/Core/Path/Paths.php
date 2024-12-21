@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Core\Path;
+<?php namespace Kodhe\Pulen\Core\Path;
 
 define('VENDORPATH', dirname(dirname(__DIR__)));
 

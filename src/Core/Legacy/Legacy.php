@@ -1,16 +1,16 @@
-<?php namespace Kodhe\Core\Legacy;
+<?php namespace Kodhe\Pulen\Core\Legacy;
 
-use Kodhe\Core\Loader\Plugin\Plugin;
-use Kodhe\Core\Loader\Package\Package;
-use Kodhe\Core\Loader\Library\Library;
-use Kodhe\Core\Loader\Model\Model;
-use Kodhe\Core\Loader\Helper\Helper;
-use Kodhe\Core\Loader\Driver\Driver;
-use Kodhe\Core\Loader\View\View;
-use Kodhe\Core\Loader\Autoloader;
-use Kodhe\Core\Facade\Facade;
-use Kodhe\Core\Path\Paths;
-use Kodhe\Core\Dependency\DependencyResolver;
+use Kodhe\Pulen\Core\Loader\Plugin\Plugin;
+use Kodhe\Pulen\Core\Loader\Package\Package;
+use Kodhe\Pulen\Core\Loader\Library\Library;
+use Kodhe\Pulen\Core\Loader\Model\Model;
+use Kodhe\Pulen\Core\Loader\Helper\Helper;
+use Kodhe\Pulen\Core\Loader\Driver\Driver;
+use Kodhe\Pulen\Core\Loader\View\View;
+use Kodhe\Pulen\Core\Loader\Autoloader;
+use Kodhe\Pulen\Core\Facade\Facade;
+use Kodhe\Pulen\Core\Path\Paths;
+use Kodhe\Pulen\Core\Dependency\DependencyResolver;
 class Legacy {
 
 	protected $router_ready = FALSE;
@@ -49,7 +49,7 @@ class Legacy {
 
 	private function setFacade(Facade $facade){
 
-		$this->resolve->resolve('Kodhe\Core\Loader\Loader', []);
+		$this->resolve->resolve('Kodhe\Pulen\Core\Loader\Loader', []);
 
 		foreach (is_loaded() as $var => $class)
 		{
@@ -64,7 +64,7 @@ class Legacy {
 			$facade->set($var, $class);
 		}
 
-		$facade->set('blade', new \Kodhe\Core\Loader\View\Blade());
+		$facade->set('blade', new \Kodhe\Pulen\Core\Loader\View\Blade());
 
 	}
 
@@ -74,7 +74,7 @@ class Legacy {
 	 */
 	public function overrideConfig(array $config)
 	{
-		$config =& load_class('Kodhe\Core\Config\Config', 'core');// new \Kodhe\Core\Config\Config();
+		$config =& load_class('Kodhe\Pulen\Core\Config\Config', 'core');// new \Kodhe\Pulen\Core\Config\Config();
 		$config->_assign_to_config($config);
 	}
 
@@ -83,7 +83,7 @@ class Legacy {
 	 */
 	public function overrideRouting(array $routing)
 	{
-		$router =& load_class('Kodhe\Core\Router\Router');// new \Kodhe\Core\Router\Router();
+		$router =& load_class('Kodhe\Pulen\Core\Router\Router');// new \Kodhe\Pulen\Core\Router\Router();
 		if ( ! $this->router_ready)
 		{
 			$router->_set_routing();
@@ -99,8 +99,8 @@ class Legacy {
 	 */
 	public function getRouting()
 	{
-		$router =& load_class('Kodhe\Core\Router\Router');//new \Kodhe\Core\Router\Router();
-		$uri =& load_class('Kodhe\Core\URI\URI');
+		$router =& load_class('Kodhe\Pulen\Core\Router\Router');//new \Kodhe\Pulen\Core\Router\Router();
+		$uri =& load_class('Kodhe\Pulen\Core\URI\URI');
 		if ( ! $this->router_ready)
 		{
 			$router->_set_routing();
@@ -121,7 +121,7 @@ class Legacy {
 	public function includeBaseController()
 	{
 
-		class_alias('Kodhe\Controller', 'CI_Controller');
+		class_alias('Kodhe\Pulen\Controller', 'CI_Controller');
 
 		$subclass_prefix = $GLOBALS['CFG']->item('subclass_prefix').'Controller';
 
@@ -137,7 +137,7 @@ class Legacy {
 	 */
 	public function loadController($routing)
 	{
-		$modules = new \Kodhe\Core\Module\Module();
+		$modules = new \Kodhe\Pulen\Core\Module\Module();
 
 		foreach ($modules::getLocations() as $location => $offset) {
 			$path = $location.'/'.str_replace($offset,'',$routing['directory']).$routing['class'].'.php';
@@ -154,8 +154,8 @@ class Legacy {
 
 		if ( ! file_exists(resolve_path(APPPATH,'controllers').'/'.$routing['directory'].$routing['class'].'.php'))
 		{
-			if (method_exists('Kodhe\Modules\NotFound\Controllers\NotFound', 'index')) {
-				return call_user_func_array(['Kodhe\Modules\NotFound\Controllers\NotFound', 'index'], array());
+			if (method_exists('Kodhe\Pulen\Modules\NotFound\Controllers\NotFound', 'index')) {
+				return call_user_func_array(['Kodhe\Pulen\Modules\NotFound\Controllers\NotFound', 'index'], array());
 			}
 		}
 
@@ -179,7 +179,7 @@ class Legacy {
 	 */
 	public function markBenchmark($str)
 	{
-		$BM = load_class('Kodhe\Core\Benchmark\Benchmark', 'core');
+		$BM = load_class('Kodhe\Pulen\Core\Benchmark\Benchmark', 'core');
 		$BM->mark($str);
 	}
 
@@ -258,16 +258,16 @@ class Legacy {
 		// to ditch it all very soon.
 
 		$ci_core = array(
-			'BM'	=>'Kodhe\Core\Benchmark\Benchmark',
-			'CFG'	=>'Kodhe\Core\Config\Config',
-			'UNI'	=>'Kodhe\Core\Utf8\Utf8',
-			'URI'	=>'Kodhe\Core\URI\URI',
-			'RTR'	=>'Kodhe\Core\Router\Router',
-			'OUT'	=>'Kodhe\Core\Output\Output',
-			'SEC'	=>'Kodhe\Core\Security\Security',
-			'IN'	=>'Kodhe\Core\Input\Input',
-			'LANG'	=>'Kodhe\Core\Lang\Lang',
-			'MOD'	=>'Kodhe\Core\Module\Module',
+			'BM'	=>'Kodhe\Pulen\Core\Benchmark\Benchmark',
+			'CFG'	=>'Kodhe\Pulen\Core\Config\Config',
+			'UNI'	=>'Kodhe\Pulen\Core\Utf8\Utf8',
+			'URI'	=>'Kodhe\Pulen\Core\URI\URI',
+			'RTR'	=>'Kodhe\Pulen\Core\Router\Router',
+			'OUT'	=>'Kodhe\Pulen\Core\Output\Output',
+			'SEC'	=>'Kodhe\Pulen\Core\Security\Security',
+			'IN'	=>'Kodhe\Pulen\Core\Input\Input',
+			'LANG'	=>'Kodhe\Pulen\Core\Lang\Lang',
+			'MOD'	=>'Kodhe\Pulen\Core\Module\Module',
 		);
 
 		foreach ($ci_core as $key => $class) {
@@ -321,24 +321,24 @@ class Legacy {
 	{
 
 		$ci_core = array(
-			'CI_Benchmark'	=>'Kodhe\Core\Benchmark\Benchmark',
-			'CI_Config'	=>'Kodhe\Core\Config\Config',
-			'CI_Utf8'	=>'Kodhe\Core\Utf8\Utf8',
-			'CI_URI'	=>'Kodhe\Core\URI\URI',
-			'CI_Router'	=>'Kodhe\Core\Router\Router',
-			'CI_Output'	=>'Kodhe\Core\Output\Output',
-			'CI_Security'	=>'Kodhe\Core\Security\Security',
-			'CI_Input'	=>'Kodhe\Core\Input\Input',
-			'CI_Lang'	=>'Kodhe\Core\Lang\Lang',
-			'CI_Model'	=>'Kodhe\Core\Model\Legacy',
-			'CI_Module'	=>'Kodhe\Core\Module\Module',
+			'CI_Benchmark'	=>'Kodhe\Pulen\Core\Benchmark\Benchmark',
+			'CI_Config'	=>'Kodhe\Pulen\Core\Config\Config',
+			'CI_Utf8'	=>'Kodhe\Pulen\Core\Utf8\Utf8',
+			'CI_URI'	=>'Kodhe\Pulen\Core\URI\URI',
+			'CI_Router'	=>'Kodhe\Pulen\Core\Router\Router',
+			'CI_Output'	=>'Kodhe\Pulen\Core\Output\Output',
+			'CI_Security'	=>'Kodhe\Pulen\Core\Security\Security',
+			'CI_Input'	=>'Kodhe\Pulen\Core\Input\Input',
+			'CI_Lang'	=>'Kodhe\Pulen\Core\Lang\Lang',
+			'CI_Model'	=>'Kodhe\Pulen\Core\Model\Legacy',
+			'CI_Module'	=>'Kodhe\Pulen\Core\Module\Module',
 
-			'Model'	=>'Kodhe\Core\Model\Model',
+			'Model'	=>'Kodhe\Pulen\Core\Model\Model',
 
 		);
 
-		if(class_exists('Kodhe\Core\Loader\Loader')) {
-			class_alias('Kodhe\Core\Loader\Loader', 'CI_Loader');
+		if(class_exists('Kodhe\Pulen\Core\Loader\Loader')) {
+			class_alias('Kodhe\Pulen\Core\Loader\Loader', 'CI_Loader');
 		}
 
 		foreach ($ci_core as $alias => $class) {
@@ -348,30 +348,30 @@ class Legacy {
 		}
 
 	$ci_libraries = array(
-		'CI_Calendar'=>'Kodhe\Libraries\Calendar\Calendar',
-		'CI_Cart'=>'Kodhe\Libraries\Cart\Cart',
-		'CI_Driver_Library'=>'Kodhe\Libraries\Driver\Library',
-		'CI_Driver'=>'Kodhe\Libraries\Driver\Driver\Driver',
-		'CI_Email'=>'Kodhe\Libraries\Email\Email',
-		'CI_Encrypt'=>'Kodhe\Libraries\Encrypt\Encrypt',
-		'CI_Encryption'=>'Kodhe\Libraries\Encryption\Encryption',
-		'CI_Form_validation'=>'Kodhe\Libraries\FormValidation\FormValidation',
-		'CI_Ftp'=>'Kodhe\Libraries\Ftp\Ftp',
-		'CI_Image_lib'=>'Kodhe\Libraries\Image_lib\Image_lib',
-		'CI_Javascript'=>'Kodhe\Libraries\Javascript\Javascript',
-		'CI_Log'=>'Kodhe\Libraries\Log\Log',
-		'CI_Migration'=>'Kodhe\Libraries\Migration\Migration',
-		'CI_Pagination'=>'Kodhe\Libraries\Pagination\Pagination',
-		'CI_Parser'=>'Kodhe\Libraries\Parser\Parser',
-		'CI_Profiler'=>'Kodhe\Libraries\Profiler\Profiler',
-		'CI_Table'=>'Kodhe\Libraries\Table\Table',
-		'CI_Trackback'=>'Kodhe\Libraries\Trackback\Trackback',
-		'CI_Typography'=>'Kodhe\Libraries\Typography\Typography',
-		'CI_Unit_test'=>'Kodhe\Libraries\UnitTest\UnitTest',
-		'CI_Upload'=>'Kodhe\Libraries\Upload\Upload',
-		'CI_User_agent'=>'Kodhe\Libraries\UserAgent\UserAgent',
-		'CI_Xmlrpc'=>'Kodhe\Libraries\Xmlrpc\Xmlrpc',
-		'CI_Zip'=>'Kodhe\Libraries\Zip\Zip',
+		'CI_Calendar'=>'Kodhe\Pulen\Libraries\Calendar\Calendar',
+		'CI_Cart'=>'Kodhe\Pulen\Libraries\Cart\Cart',
+		'CI_Driver_Library'=>'Kodhe\Pulen\Libraries\Driver\Library',
+		'CI_Driver'=>'Kodhe\Pulen\Libraries\Driver\Driver\Driver',
+		'CI_Email'=>'Kodhe\Pulen\Libraries\Email\Email',
+		'CI_Encrypt'=>'Kodhe\Pulen\Libraries\Encrypt\Encrypt',
+		'CI_Encryption'=>'Kodhe\Pulen\Libraries\Encryption\Encryption',
+		'CI_Form_validation'=>'Kodhe\Pulen\Libraries\FormValidation\FormValidation',
+		'CI_Ftp'=>'Kodhe\Pulen\Libraries\Ftp\Ftp',
+		'CI_Image_lib'=>'Kodhe\Pulen\Libraries\Image_lib\Image_lib',
+		'CI_Javascript'=>'Kodhe\Pulen\Libraries\Javascript\Javascript',
+		'CI_Log'=>'Kodhe\Pulen\Libraries\Log\Log',
+		'CI_Migration'=>'Kodhe\Pulen\Libraries\Migration\Migration',
+		'CI_Pagination'=>'Kodhe\Pulen\Libraries\Pagination\Pagination',
+		'CI_Parser'=>'Kodhe\Pulen\Libraries\Parser\Parser',
+		'CI_Profiler'=>'Kodhe\Pulen\Libraries\Profiler\Profiler',
+		'CI_Table'=>'Kodhe\Pulen\Libraries\Table\Table',
+		'CI_Trackback'=>'Kodhe\Pulen\Libraries\Trackback\Trackback',
+		'CI_Typography'=>'Kodhe\Pulen\Libraries\Typography\Typography',
+		'CI_Unit_test'=>'Kodhe\Pulen\Libraries\UnitTest\UnitTest',
+		'CI_Upload'=>'Kodhe\Pulen\Libraries\Upload\Upload',
+		'CI_User_agent'=>'Kodhe\Pulen\Libraries\UserAgent\UserAgent',
+		'CI_Xmlrpc'=>'Kodhe\Pulen\Libraries\Xmlrpc\Xmlrpc',
+		'CI_Zip'=>'Kodhe\Pulen\Libraries\Zip\Zip',
 	);
 
 	foreach ($ci_libraries as $alias => $class) {

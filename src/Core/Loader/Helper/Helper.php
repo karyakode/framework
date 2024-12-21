@@ -1,13 +1,13 @@
-<?php namespace Kodhe\Core\Loader\Helper;
+<?php namespace Kodhe\Pulen\Core\Loader\Helper;
 
-use Kodhe\Core\Module\Module;
+use Kodhe\Pulen\Core\Module\Module;
 
 class Helper {
 
 	public $_kodhe_helpers =	array();
 	protected $_kodhe_helper_paths;
 
-  public function __construct(\Kodhe\Core\Path\Paths $Paths)
+  public function __construct(\Kodhe\Pulen\Core\Path\Paths $Paths)
 	{
 		$this->_kodhe_helper_paths = $Paths::$helperPaths;
 	}

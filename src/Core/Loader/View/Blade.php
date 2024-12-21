@@ -1,5 +1,5 @@
-<?php namespace Kodhe\Core\Loader\View;
-use Kodhe\Core\Module\Module;
+<?php namespace Kodhe\Pulen\Core\Loader\View;
+use Kodhe\Pulen\Core\Module\Module;
 /**
  * Same as laravel Blade Template
  *
