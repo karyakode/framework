@@ -177,7 +177,7 @@ class Loader {
 
 	public function plugin($plugin)
 	{
-		$plugins = new Plugins();
+		$plugins = new Plugin();
 		return $plugins->plugin($plugin);
 	}
 

@@ -8,6 +8,8 @@ class Controller extends BaseController
     parent::__construct();
 
     $this->load->library('core');
+    $this->load->driver('cache');
+
     //$this->core->bootstrap();
 
     $this->load->initialize();

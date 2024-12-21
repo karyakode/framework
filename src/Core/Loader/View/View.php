@@ -45,8 +45,6 @@ class View extends \Kodhe\Core\Engine\BaseController {
  		// Temporarily replace them, load the view, and back again
  		$this->_kodhe_view_paths = array_reverse($ee_only, TRUE);
 
-		$vars['kodhe'] = kodhe();
-
 		if (method_exists($this, '_kodhe_object_to_array')) {
 				$ret = $this->_kodhe_load(['_kodhe_view' => $view, '_kodhe_vars' => $this->_kodhe_object_to_array($vars), '_kodhe_return' => $return]);
 		} else {

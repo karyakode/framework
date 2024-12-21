@@ -73,7 +73,6 @@ class Cache extends DriverLibrary {
         // If the specified adapter isn't available, check the backup.
         if ( ! $this->is_supported($this->_adapter))
         {
-
             if ( ! $this->is_supported($this->_backup_driver))
             {
                 // Backup isn't supported either. Default to 'Dummy' driver.

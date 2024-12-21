@@ -57,12 +57,14 @@ class Legacy {
 			$facade->set($var, load_class($class, 'core'));
 		}
 
+
 		foreach ($this->resolve->classLoaded as $var => $class)
 		{
 			$var = ($var == 'loader') ? 'load' : $var;
 			$facade->set($var, $class);
 		}
 
+		$facade->set('blade', new \Kodhe\Core\Loader\View\Blade());
 
 	}
 
