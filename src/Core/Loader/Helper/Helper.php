@@ -44,13 +44,15 @@ class Helper {
               continue;
           }
 
+					$this->load_base_helper($helper);
+
           if ($this->load_helper_extension($helper)) {
               $this->_kodhe_helpers[$helper] = TRUE;
               continue;
           }
 
           if (!$this->load_helper($helper)) {
-              show_error("Unable to load the requested file: helpers/{$helper}.php");
+
           }
       }
 
@@ -69,12 +71,15 @@ class Helper {
   {
       $ext_helper = config_item('subclass_prefix') . basename($helper);
 
+
       foreach ($this->_kodhe_helper_paths as $path) {
           $helper_path = resolve_path($path, 'helpers');
 
+					//if($path === VENDORPATH) $helper_path = trim($path,'/').'/Helpers/legacy';
+					//echo "{$helper_path}/{$ext_helper}.php".'<br>';
+
           if (file_exists("{$helper_path}/{$ext_helper}.php")) {
               include_once("{$helper_path}/{$ext_helper}.php");
-              $this->load_base_helper($helper);
               log_message('info', "Helper extension loaded: {$ext_helper}");
               return TRUE;
           }
@@ -85,13 +90,14 @@ class Helper {
 
   protected function load_base_helper($helper)
   {
-      echo $base_helper_path = VENDORPATH. 'Helpers/legacy' . "/{$helper}.php";
+      $base_helper_path = VENDORPATH. '/Helpers/legacy' . "/{$helper}.php";
 
       if (!file_exists($base_helper_path)) {
-          show_error("Unable to load the requested file: helpers/{$helper}.php");
+          show_error("Unable to load legacy helpers the requested file: helpers/{$helper}.php");
       }
 
       include_once($base_helper_path);
+			$this->_kodhe_helpers[$helper] = TRUE;
       log_message('info', "Base helper loaded: {$helper}");
   }
 
@@ -100,6 +106,8 @@ class Helper {
       foreach ($this->_kodhe_helper_paths as $path) {
           $helper_path = resolve_path($path, 'helpers');
 
+					if($path === VENDORPATH) $helper_path = trim($path,'/').'/Helpers/legacy';
+					//echo $helper_path.'<br>';
           if (file_exists("{$helper_path}/{$helper}.php")) {
               include_once("{$helper_path}/{$helper}.php");
               $this->_kodhe_helpers[$helper] = TRUE;
@@ -115,12 +123,5 @@ class Helper {
  {
    return $this->make($helpers);
  }
-
-
-  protected function &_kodhe_get_component($component)
-	{
-		return kodhe()->$component;
-	}
-
 
 }

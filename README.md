@@ -1,26 +1,60 @@
-# Kodhe Framework
+# Kodhe Framework  
 
-Kodhe Framework adalah sebuah framework PHP berbasis CodeIgniter 3 yang dirancang untuk membuat pengembangan aplikasi web lebih modern dan efisien. Dengan dukungan namespace dan arsitektur yang lebih terstruktur, Kodhe Framework bertujuan untuk memberikan pengalaman pengembangan yang lebih baik sambil mempertahankan kompatibilitas dengan CodeIgniter 3.
+Kodhe Framework adalah pengembangan modern dari CodeIgniter 3 yang dirancang untuk memberikan pengalaman pengembangan aplikasi yang lebih efisien, modular, dan sesuai dengan standar modern. Kodhe Framework mendukung namespace, dependency injection (DI), HMVC, dan templating modern seperti Blade Laravel.  
 
-## Fitur Utama
+---
 
-- Berbasis CodeIgniter 3, tetapi lebih modern.
-- Mendukung namespace dengan prefix default `App`.
-- Pengaturan yang mudah dan cepat untuk pengembangan aplikasi web.
-- Dilengkapi dengan fitur-fitur tambahan untuk meningkatkan produktivitas pengembang.
+## Fitur Utama  
 
-## Cara Instalasi
+1. **Dukungan Namespace**  
+   Kodhe Framework menggunakan namespace untuk struktur yang lebih rapi:
+   - `app`
+     - `Controllers`  
+     - `Models`  
+     - `Libraries`  
+     - `Services`  
 
-### Instalasi Manual
+3. **Dependency Injection (DI)**  
+   Mendukung DI untuk controller dan service, mempermudah manajemen dependensi.  
+   ```php
+   // DI di Controller
+   public function __construct(App\Services\PostServices $postService) {  
+       $this->postService = $postService;  
+   }
 
-1. **Unduh Kodhe Framework**:
-   Unduh kode sumber Kodhe Framework dari [repository GitHub](https://github.com/rohmadkadarwanto/Kodhe).
+4. **HMVC (Hierarchical Model-View-Controller)**
+   Mendukung arsitektur modular untuk mempermudah pengembangan aplikasi berskala besar.
 
-2. **Ekstrak dan Tempatkan di Direktori Proyek**:
-   Setelah diunduh, ekstrak dan tempatkan file Kodhe di direktori proyek Anda.
+   - `app`
+      - `Modules/Blog`
+        - `Controllers`
+        - `Models`
+        - `Views`
 
-3. **Konfigurasi Database dan Pengaturan**:
-   Sesuaikan file konfigurasi di `app/config/config.php` dan `app/config/database.php` sesuai dengan pengaturan proyek Anda.
 
-4. **Mulai Pengembangan**:
-   Sekarang Anda dapat mulai mengembangkan aplikasi menggunakan Kodhe Framework.
+5. **Blade Template**
+   Menggunakan library mirip Blade Laravel untuk templating.
+   ```php
+   $this->blade->render('post', $data);
+
+6. **Services**
+   Memisahkan logika bisnis dari controller untuk kode yang lebih bersih dan terorganisir.
+   ```php
+   namespace App\Services;  
+   class PostServices {  
+       public function getAllPosts() {  
+           // Logika bisnis  
+       }  
+   }
+
+
+7. **Dukungan Default Super Object CodeIgniter 3**
+  Tetap mendukung fitur bawaan CI3 seperti $this->load, $this->input, $this->db, dll.
+
+8. **Berbasis CodeIgniter 3**
+  Kodhe Framework sepenuhnya kompatibel dengan fitur-fitur dasar CodeIgniter 3.
+
+9. **Standar Penamaan File dan Folder**
+
+  Nama folder dan file diawali huruf besar (contoh: PostModel.php).
+  Penamaan class tidak menggunakan tanda underscore _ (contoh: PostModel, bukan post_model).
