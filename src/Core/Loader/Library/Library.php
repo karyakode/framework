@@ -45,6 +45,7 @@ class Library
         $params = $this->loadLibraryConfig($params, $objectName);
 
         if ($path === false) {
+
             $this->loadLibrary($library, $params, $objectName);
         } else {
             $this->initializeLibrary($path, $_library, $class, $objectName, $params);
@@ -125,6 +126,7 @@ class Library
             !$this->loadFromLibraryPaths($className, $subdir, $params, $objectName) &&
             empty($subdir)
         ) {
+
             $this->loadLibrary("$class/$class", $params, $objectName);
         }
     }

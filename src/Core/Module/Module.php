@@ -181,6 +181,7 @@ class Module implements ModuleInterface
 
         $module or $module = self::$getModule;
 
+
         $segments = explode('/', $file);
 
         $file = array_pop($segments);
@@ -205,6 +206,7 @@ class Module implements ModuleInterface
                     }
                 } elseif // load non-class files
                 (is_file($fullpath.$file_ext)) {
+
                     return [$fullpath, $file];
                 }
             }

@@ -85,7 +85,7 @@ class Helper {
 
   protected function load_base_helper($helper)
   {
-      $base_helper_path = resolve_path(BASEPATH, 'helpers') . "/{$helper}.php";
+      echo $base_helper_path = VENDORPATH. 'Helpers/legacy' . "/{$helper}.php";
 
       if (!file_exists($base_helper_path)) {
           show_error("Unable to load the requested file: helpers/{$helper}.php");

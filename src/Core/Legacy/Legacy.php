@@ -29,6 +29,8 @@ class Legacy {
 		$this->exposeGlobals();
 		$this->aliasClasses();
 		$this->overrideRoutingConfig();
+
+
 	}
 
 	/**
@@ -63,6 +65,7 @@ class Legacy {
 			$var = ($var == 'loader') ? 'load' : $var;
 			$facade->set($var, $class);
 		}
+
 
 		$facade->set('blade', new \Kodhe\Pulen\Core\Loader\View\Blade());
 

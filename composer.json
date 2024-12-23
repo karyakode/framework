@@ -39,7 +39,7 @@
       ],
       "psr-4": {
         "Kodhe\\Pulen\\": "src/",
-        "Kodhe\\Pulen\\": "pulen/"
+        "Kodhe\\": "Pulen/"
       }
     },
     "minimum-stability": "dev",

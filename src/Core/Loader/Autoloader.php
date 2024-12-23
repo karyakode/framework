@@ -15,26 +15,14 @@ class Autoloader
 
 			if (Module::$getModule) {
 
-					// Before PHP 7.1.0, list() only worked on numerical arrays and assumes the numerical indices start at 0.
-					if (version_compare(phpversion(), '7.1', '<')) {
-							// php version isn't high enough
-							list($path, $file) = Module::find('constants', 'config/');
-					} else {
-							[$path, $file] = Module::find('constants', 'config/');
-					}
+          [$path, $file] = Module::find('constants', 'config/');
+
 					// module constants file
 					if ($path !== false) {
 							include_once $path.$file.'.php';
 					}
 
-					// Backward function
-					// Before PHP 7.1.0, list() only worked on numerical arrays and assumes the numerical indices start at 0.
-					if (version_compare(phpversion(), '7.1', '<')) {
-							// php version isn't high enough
-							list($path, $file) = Module::find('autoload', 'config/');
-					} else {
-							[$path, $file] = Module::find('autoload', 'config/');
-					}
+          [$path, $file] = Module::find('autoload', 'config/');
 
 					// module autoload file
 					if ($path !== false) {
