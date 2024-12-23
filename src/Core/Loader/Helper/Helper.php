@@ -92,13 +92,12 @@ class Helper {
   {
       $base_helper_path = VENDORPATH. '/Helpers/legacy' . "/{$helper}.php";
 
-      if (!file_exists($base_helper_path)) {
-          show_error("Unable to load legacy helpers the requested file: helpers/{$helper}.php");
+      if (file_exists($base_helper_path)) {
+				include_once($base_helper_path);
+				$this->_kodhe_helpers[$helper] = TRUE;
+	      log_message('info', "Base helper loaded: {$helper}");
       }
 
-      include_once($base_helper_path);
-			$this->_kodhe_helpers[$helper] = TRUE;
-      log_message('info', "Base helper loaded: {$helper}");
   }
 
   protected function load_helper($helper)
@@ -106,7 +105,7 @@ class Helper {
       foreach ($this->_kodhe_helper_paths as $path) {
           $helper_path = resolve_path($path, 'helpers');
 
-					if($path === VENDORPATH) $helper_path = trim($path,'/').'/Helpers/legacy';
+					//if($path === VENDORPATH) $helper_path = trim($path,'/').'/Helpers/legacy';
 					//echo $helper_path.'<br>';
           if (file_exists("{$helper_path}/{$helper}.php")) {
               include_once("{$helper_path}/{$helper}.php");
