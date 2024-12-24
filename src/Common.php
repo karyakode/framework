@@ -763,3 +763,19 @@ if (!function_exists('resolve_path')) {
         return $uppercasePath;
     }
 }
+
+if (!function_exists('session')) {
+    /**
+     * Retrieve session data in CI3 (compatible with Blade)
+     *
+     * @param string|null $key The session key to retrieve
+     * @return mixed Session value or null if not found
+     */
+    function session($key = null) {
+        $ci =& kodhe();
+        if ($key) {
+            return $ci->session->userdata($key);
+        }
+        return $ci->session->all_userdata();
+    }
+}

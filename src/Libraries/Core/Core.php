@@ -19,9 +19,8 @@ class Core
 
 		$this->bootstrapped = TRUE;
 
-
-
     define('KODHE_VERSION', kodhe('setup')->get('version'));
+    kodhe()->load->initialize();
 
   }
 
