@@ -1614,27 +1614,25 @@ class Model extends Legacy implements \ArrayAccess
         return kodhe()->db;
     }
 
-    /**
-     * ORM set property
-     *
-     * @param string $name Property key name
-     * @param mixed $value
-     */
     public function __set($name, $value)
     {
+        if (!is_string($name)) {
+            throw new \TypeError("Property name must be a string, " . gettype($name) . " given");
+        }
+
         // Property check option
         if ($this->propertyCheck) {
-
             $flag = false;
 
             // Check if exists
             foreach ($this->getTableSchema() as $key => $column) {
-                if ($name == $column['Field']) {
+                if ($name === $column['Field']) {
                     $flag = true;
+                    break;
                 }
             }
 
-            // No mathc Exception
+            // No match Exception
             if (!$flag) {
                 throw new \Exception("Property `{$name}` does not exist", 500);
             }
@@ -1643,135 +1641,74 @@ class Model extends Legacy implements \ArrayAccess
         $this->_writeProperties[$name] = $value;
     }
 
-    /**
-     * ORM get property
-     *
-     * @param string $name Property key name
-     */
     public function __get($name)
     {
+        if (!is_string($name)) {
+            throw new \TypeError("Property name must be a string, " . gettype($name) . " given");
+        }
+
         // ORM property check
-        if (array_key_exists($name, $this->_writeProperties) ) {
-
+        if (array_key_exists($name, $this->_writeProperties)) {
             return $this->_writeProperties[$name];
-        }
-        else if (array_key_exists($name, $this->_readProperties)) {
-
+        } elseif (array_key_exists($name, $this->_readProperties)) {
             return $this->_readProperties[$name];
-        }
-        // ORM relationship check
-        else if (method_exists($this, $method = $name)) {
-
+        } elseif (method_exists($this, $method = $name)) {
             return $this->_getRelationshipProperty($method);
-        }
-        // ORM schema check
-        else {
-
-            // Write cache to read properties of this ORM
+        } else {
             foreach ($this->getTableSchema() as $key => $column) {
-
-                $this->_readProperties[$column['Field']] = isset($this->_readProperties[$column['Field']])
-                    ? $this->_readProperties[$column['Field']]
-                    : null;
+                $this->_readProperties[$column['Field']] = $this->_readProperties[$column['Field']] ?? null;
             }
 
-            // Match property again
             if (array_key_exists($name, $this->_readProperties)) {
-
                 return $this->_readProperties[$name];
             }
 
-            // CI parent::__get() check
             if (property_exists(kodhe(), $name)) {
-
                 return parent::__get($name);
             }
 
-            // Exception
             throw new \Exception("Property `{$name}` does not exist", 500);
         }
-
-        return null;
     }
 
-    /**
-     * ORM isset property
-     *
-     * @param string $name
-     * @return void
-     */
-    public function __isset($name) {
+    #[\ReturnTypeWillChange]
+    public function offsetSet(mixed $offset, mixed $value)
+  {
+      if (!is_string($offset)) {
+          throw new \TypeError("Offset must be a string, " . gettype($offset) . " given");
+      }
 
-        if (isset($this->_writeProperties[$name])) {
+      $this->__set($offset, $value);
+  }
 
-            return true;
-        }
-        else if (isset($this->_readProperties[$name])) {
+  #[\ReturnTypeWillChange]
+  public function offsetExists(mixed $offset)
+  {
+      if (!is_string($offset)) {
+          throw new \TypeError("Offset must be a string, " . gettype($offset) . " given");
+      }
 
-            return true;
-        }
-        else if (method_exists($this, $method = $name)) {
+      return $this->__isset($offset);
+  }
 
-            return ($this->_getRelationshipProperty($method));
-        }
+  #[\ReturnTypeWillChange]
+  public function offsetUnset(mixed $offset)
+  {
+      if (!is_string($offset)) {
+          throw new \TypeError("Offset must be a string, " . gettype($offset) . " given");
+      }
 
-        return false;
-    }
+      $this->__unset($offset);
+  }
 
-    /**
-     * ORM unset property
-     *
-     * @param string $name
-     * @return void
-     */
-    public function __unset($name) {
+  #[\ReturnTypeWillChange]
+  public function offsetGet(mixed $offset)
+  {
+      if (!is_string($offset)) {
+          throw new \TypeError("Offset must be a string, " . gettype($offset) . " given");
+      }
 
-        unset($this->_writeProperties[$name]);
-        unset($this->_readProperties[$name]);
-    }
+      return $this->$offset;
+  }
 
-    /**
-     * ArrayAccess offsetSet
-     *
-     * @param string $offset
-     * @param mixed $value
-     * @return void
-     */
-    public function offsetSet($offset, $value) {
-
-        return $this->__set($offset, $value);
-    }
-
-    /**
-     * ArrayAccess offsetExists
-     *
-     * @param string $offset
-     * @return bool Result
-     */
-    public function offsetExists($offset) {
-
-        return $this->__isset($offset);
-    }
-
-    /**
-     * ArrayAccess offsetUnset
-     *
-     * @param string $offset
-     * @return void
-     */
-    public function offsetUnset($offset) {
-
-        return $this->__unset($offset);
-    }
-
-    /**
-     * ArrayAccess offsetGet
-     *
-     * @param string $offset
-     * @return mixed Value of property
-     */
-    public function offsetGet($offset) {
-
-        return $this->$offset;
-    }
 }

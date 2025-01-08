@@ -179,9 +179,14 @@ class Framework {
 
 
 
-		$namespace = $directory ? str_replace(['.','/'],['','\\'],trim($directory,'/')) : 'Controllers';
-		if(!in_array('Modules', explode('/',$directory))) {
-			$namespace = $directory ? 'Controllers\\'.str_replace(['.','/'],['','\\'],trim($directory,'/')) : 'Controllers';
+		$namespace = is_string($directory) && $directory !== ''
+		    ? str_replace(['.', '/'], ['', '\\'], trim($directory, '/'))
+		    : 'Controllers';
+
+		if (is_string($directory) && !in_array('Modules', explode('/', $directory))) {
+		    $namespace = $directory
+		        ? 'Controllers\\' . str_replace(['.', '/'], ['', '\\'], trim($directory, '/'))
+		        : 'Controllers';
 		}
 
 		$namespace = trim($namespace,'\\');

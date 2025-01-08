@@ -11,7 +11,7 @@ return [
 	'namespace' => 'Kodhe\Pulen',
 	'author' => 'Karya Kode',
 	'name' => 'Kodhe Framework',
-	'version' => '0.3.2.2.0',
+	'version' => '0.3.3.2.0',
 	'link' => 'https://karyakode.id',
 	'date' => date('Y-m-d'),
 	'description' => "The page you are looking at is being generated dynamically by Karya Kode.",

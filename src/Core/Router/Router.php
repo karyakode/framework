@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Pulen\Core\Router; defined('BASEPATH') OR exit('No direct script access allowed');
+<?php namespace Kodhe\Pulen\Core\Router;
 
 use Kodhe\Pulen\Core\Module\Module;
 
@@ -80,7 +80,19 @@ class Router extends Legacy
         $this->located = 0;
         $ext = $this->config->item('controller_suffix').'.php';
 
-				$routes = Module::parse_routes($segments[0], implode('/', array_map('strtolower',$segments)));
+        if (!empty($segments) && isset($segments[0]) && is_string($segments[0])) {
+            $routeSegment = strtolower($segments[0]);
+        } else {
+            $routeSegment = '';
+        }
+
+        $routePath = implode('/', array_map(function ($segment) {
+            return is_string($segment) ? strtolower($segment) : '';
+        }, $segments));
+
+        $routes = Module::parse_routes($routeSegment, $routePath);
+
+				//$routes = Module::parse_routes($segments[0], implode('/', array_map('strtolower',$segments)));
 
         /* use module route if available */
         if (!empty($segments[0]) && $routes) {
@@ -88,16 +100,7 @@ class Router extends Legacy
         }
 
 
-        // Backward function
-        // Before PHP 7.1.0, list() only worked on numerical arrays and assumes the numerical indices start at 0.
-        if (version_compare(phpversion(), '7.1', '<')) {
-            // php version isn't high enough
-            // get the segments array elements
-            list($module, $directory, $controller) = array_pad($segments, 3, null);
-        } else {
-            [$module, $directory, $controller] = array_pad($segments, 3, null);
-        }
-
+        [$module, $directory, $controller] = array_pad($segments, 3, null);
 
 				$module = $module;
 				//$this->_set_module_path(implode('/',$segments));

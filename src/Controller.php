@@ -10,6 +10,7 @@ class Controller extends BaseController
     $this->load->library('core');
     $this->load->driver('cache');
     $this->core->bootstrap();
+    
 
   }
 
