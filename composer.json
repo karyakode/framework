@@ -35,11 +35,10 @@
     },
     "autoload": {
       "files": [
-        "src/Common.php"
+        "Pulen/Framework/Common.php"
       ],
       "psr-4": {
-        "Kodhe\\Pulen\\": "src/",
-        "Kodhe\\": "Pulen/"
+        "Kodhe\\": "/"
       }
     },
     "minimum-stability": "dev",
