@@ -79,7 +79,7 @@ class Library {
 			// Instantiate, decorate and add child
 			$obj = new $class_name();
 			$obj->decorate($this);
-			$this->$child = $obj;
+			$this->$child = @$obj;
 			return $this->$child;
 		}
 
