@@ -13,6 +13,10 @@ class Legacy {
 	public $_config_paths =	array(APPPATH);
 
 	public $_global_vars = [];
+	
+	public $exceptions = [];
+
+	public $default_ini = [];
 
 	public function __construct()
 	{

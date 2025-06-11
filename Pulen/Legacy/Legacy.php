@@ -15,7 +15,7 @@ class Legacy {
 
 	protected $router_ready = FALSE;
 	protected DependencyResolver $resolve;
-
+	protected Facade $facade;
 	function __construct(){
 		$this->resolve =  new DependencyResolver();
 

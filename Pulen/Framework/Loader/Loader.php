@@ -14,13 +14,15 @@ class Loader {
 
 	protected $_ci_classes =	array();
 
-	protected $package;
-	protected $library;
-	protected $model;
-	protected $helper;
-	protected $autoloader;
-	protected $view;
-	protected $driver;
+	protected $_base_classes;
+	protected Package $package;
+	protected Library $library;
+	protected Model $model;
+	protected Helper $helper;
+	protected Autoloader $autoloader;
+	protected View $view;
+	protected Driver $driver;
+	protected Facade $facade;
 
 	public function __construct(Facade $facade, Package $package, Library $library, Model $model, Helper $helper, View $view, Driver $driver, Autoloader $autoloader){
 

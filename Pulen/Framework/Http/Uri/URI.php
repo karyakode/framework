@@ -1,6 +1,8 @@
 <?php namespace Kodhe\Pulen\Framework\Http\Uri;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Kodhe\Pulen\Framework\Config\Config;
+
 class URI {
 
 	public $keyval = array();
@@ -8,6 +10,7 @@ class URI {
 	public $segments = array();
 	public $rsegments = array();
 	protected $_permitted_uri_chars;
+	protected Config $config;
 
 	public function __construct()
 	{

@@ -8,10 +8,11 @@ use Kodhe\Pulen\Framework\Application\Http\Response;
 
 class Application {
 
-	protected $registry;
-	protected $dependencies;
-	protected $request;
-	protected $response;
+	protected ProviderRegistry $registry;
+	protected ServiceProvider $dependencies;
+	protected Request $request;
+	protected Response $response;
+	protected Autoloader $autoloader;
 
 	public function __construct(Autoloader $autoloader, ServiceProvider $dependencies, ProviderRegistry $registry)
 	{

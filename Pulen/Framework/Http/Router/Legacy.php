@@ -12,7 +12,7 @@ class Legacy {
 	public $default_controller;
 	public $translate_uri_dashes = FALSE;
 	public $enable_query_strings = FALSE;
-
+	public $uri;
 	public function __construct($routing = NULL)
 	{
 

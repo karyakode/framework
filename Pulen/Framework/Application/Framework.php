@@ -22,6 +22,8 @@ class Framework {
 	 */
 	protected $running = FALSE;
 
+	protected Legacy $legacy;
+
 	protected DependencyResolverInterface $resolve;
 
 	function __construct(DependencyResolverInterface $resolve){
