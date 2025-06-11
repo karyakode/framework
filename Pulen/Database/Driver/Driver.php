@@ -43,7 +43,7 @@ abstract class Driver {
 	protected $_like_escape_chr = '!';
 	protected $_random_keyword = array('RAND()', 'RAND(%d)');
 	protected $_count_string = 'SELECT COUNT(*) AS ';
-
+	protected $failover;
 	public function __construct($params)
 	{
 		if (is_array($params))
