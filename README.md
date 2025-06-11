@@ -26,3 +26,7 @@ Untuk saat ini, Kodhe Framework dapat di-clone langsung melalui Git:
 
 ```bash
 git clone https://github.com/karyakode/kodhe.git
+
+atau Composer repositori Kodhe Framework
+
+composer create-project karyakode/kodhe --stability dev
