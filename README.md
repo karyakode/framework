@@ -1,16 +1,28 @@
-# Kodhe Framework  
+# Kodhe Framework
 
-Kodhe Framework adalah pengembangan modern dari CodeIgniter 3 yang dirancang untuk memberikan pengalaman pengembangan aplikasi web yang lebih efisien, modular, dan sesuai dengan standar modern. Framework ini mendukung namespace, dependency injection (DI), HMVC (Hierarchical Model-View-Controller), dan templating modern seperti Blade Laravel.
+**Kodhe Framework** adalah framework PHP modern berbasis CodeIgniter 3 yang dirancang untuk meningkatkan produktivitas pengembang, menyederhanakan skalabilitas aplikasi, dan memperkenalkan praktik terbaik pengembangan web masa kini. Dengan dukungan **namespace**, **dependency injection (DI)**, **HMVC**, serta **templating modern** seperti Blade, Kodhe Framework menjadi solusi ringan namun fleksibel untuk membangun aplikasi web yang andal dan berorientasi masa depan.
 
-# Kodhe Framework bertujuan untuk:
+## ✨ Fitur Unggulan
 
-1. **Meningkatkan Produktivitas Pengembang:** Dengan struktur yang rapi dan dukungan fitur modern, pengembang dapat bekerja lebih cepat dan efisien.
+- ✅ Arsitektur modular berbasis HMVC
+- ✅ Dukungan namespace untuk struktur yang lebih rapi
+- ✅ Dependency Injection (DI) bawaan
+- ✅ Templating modern kompatibel dengan Blade Laravel
+- ✅ Kompatibel dengan project CodeIgniter 3 lama
+- ✅ Struktur fleksibel dan mudah dikustomisasi
+- ✅ Ringan dan cepat tanpa mengorbankan fleksibilitas
 
-2. **Memperbarui Teknologi Lama:** Membawa fondasi CodeIgniter 3 ke era modern dengan mendukung praktik terbaik pengembangan aplikasi PHP.
+## 🎯 Tujuan Pengembangan
 
-3. **Mempermudah Skalabilitas dan Pemeliharaan:** Dengan pendekatan modular dan HMVC, aplikasi lebih mudah untuk dikembangkan dan dikelola seiring pertumbuhannya.
+- **Meningkatkan Produktivitas:** Struktur proyek yang terorganisir dan modern membuat proses pengembangan lebih cepat dan efisien.
+- **Modernisasi Teknologi:** Menghadirkan praktik terbaik PHP modern tanpa meninggalkan kesederhanaan CodeIgniter 3.
+- **Skalabilitas Lebih Mudah:** Dengan HMVC dan modularisasi, proyek dapat dikembangkan dan dikelola secara bertahap.
+- **Aksesibilitas yang Luas:** Mudah dipahami oleh pengembang dari berbagai tingkat keahlian.
+- **Kustomisasi Fleksibel:** Templating dan struktur fleksibel memungkinkan penyesuaian penuh sesuai kebutuhan proyek.
 
-4. **Memberikan Kemudahan Adopsi:** Framework ini mempertahankan kesederhanaan CodeIgniter 3 sambil memperkenalkan konsep-konsep modern agar mudah dipahami oleh pengembang dari berbagai tingkat pengalaman.
+## 🚀 Instalasi
 
-5. **Mendukung Pengembangan yang Terkustomisasi:** Fitur seperti templating modern dan struktur fleksibel memungkinkan pengembang menyesuaikan framework dengan kebutuhan proyek mereka.
-Dengan Kodhe Framework, pengembang mendapatkan alat yang kuat namun tetap ringan untuk membangun aplikasi web yang handal dan berorientasi masa depan.
+Untuk saat ini, Kodhe Framework dapat di-clone langsung melalui Git:
+
+```bash
+git clone https://github.com/karyakode/kodhe.git
