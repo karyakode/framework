@@ -143,7 +143,7 @@ class Legacy {
 		$modules = new \Kodhe\Pulen\Framework\Modules\Module();
 
 		foreach ($modules::getLocations() as $location => $offset) {
-			$path = $location.'/'.str_replace($offset,'',$routing['directory']).$routing['class'].'.php';
+			$path = $location.'/'.str_replace($offset,'',$routing['directory'] ?? '').$routing['class'].'.php';
 
 			if (file_exists($path))
 			{

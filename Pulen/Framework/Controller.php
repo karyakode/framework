@@ -1,5 +1,7 @@
 <?php namespace Kodhe\Pulen;
+
 use Kodhe\Pulen\Framework\Application\BaseController;
+
 class Controller extends BaseController
 {
 

@@ -1,4 +1,4 @@
-<?php namespace Kodhe\Pulen\Framework\Http\Router; defined('BASEPATH') OR exit('No direct script access allowed');
+<?php namespace Kodhe\Pulen\Framework\Http\Router; 
 
 use Kodhe\Pulen\Framework\Modules\Module;
 

@@ -213,7 +213,7 @@ class Framework {
 
 			$RTR->set_method($RTR->fetch_class());
 
-			$directories = explode('/', rtrim($RTR->fetch_directory(), '/'));
+			$directories = explode('/', rtrim($RTR->fetch_directory() ?? '', '/'));
 			$RTR->set_class(array_pop($directories));
 
 			$class  = $RTR->fetch_class(TRUE);

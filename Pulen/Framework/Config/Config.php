@@ -1,5 +1,4 @@
 <?php namespace Kodhe\Pulen\Framework\Config;
-defined('BASEPATH') OR exit('No direct script access allowed');
 
 use Kodhe\Pulen\Framework\Modules\Module;
 
